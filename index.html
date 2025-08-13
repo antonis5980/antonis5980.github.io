@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lynx - Artificial Intelligence Assistant</title>
+  <meta name="description" content="Lynx: Your offline, private AI assistant with real-time interaction and stealth mode capability using a dual-computer setup." />
+  <link href="tailwind.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      background: transparent;
+      color: #ccc;
+	  font-family: 'Share Tech Mono', 'Courier New', monospace;
+      color: #0F0;
+	  letter-spacing: 1px;
+
+    }
+	a, button {
+    font-family: inherit;
+  }
+    canvas#matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: black;
+    }
+    .overlay-section {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0, 255, 0, 0.4);
+      border-radius: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+
+  <!-- Hero Section -->
+  <header class="overlay-section text-green-400">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4"><center><img src="lynx.png" title="" border="0" height="150px" width="150px"/></center></h1>
+      <p class="text-lg md:text-2xl mb-6">Artificial Intelligence Assistant</p>
+      <p class="max-w-2xl mx-auto mb-8">An offline, secure AI assistant designed for privacy, speed, and real-time interaction — without relying on the cloud. Features a stealth mode using a dual-computer setup for maximum discretion.</p>
+    </div>
+  </header>
+<br>
+<!-- Call to Action -->
+<section class="overlay-section text-green-400 py-16 max-w-4xl mx-auto text-center px-6">
+  <h2 class="text-3xl font-bold mb-6">Download Lynx Components</h2>
+  <p class="mb-8">Choose the part you want to get started with <br>(now with enhanced C# technology):</p>
+  <div class="flex flex-col md:flex-row justify-center gap-8">
+    <a href="javascript:alert('link will be available soon..')" target="_blank" rel="noopener" 
+       class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-8 py-4 rounded-lg shadow-lg">
+      Download A.I. Server Part
+    </a>
+    <a href="javascript:alert('link will be available soon..')" target="_blank" rel="noopener" 
+       class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-8 py-4 rounded-lg shadow-lg">
+      Download Client Part
+    </a>
+  </div>
+  <br>
+  Other free software components you also need for Lynx to operate:<br>
+  <a href="https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe" target="_blank" class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-2 py-1 rounded-lg shadow-lg">Tesseract-OCR</a>
+  &nbsp;-&nbsp;
+  <a href="https://ollama.com/download" target="_blank" class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-2 py-1 rounded-lg shadow-lg">OLLAMA</a>
+</section>
+
+  <!-- Features Section -->
+  <section id="features" class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8 text-center">
+    <div class="overlay-section p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-400">Offline & Private</h3>
+      <p>Your data never leaves your device — no internet required for processing.</p>
+    </div>
+    <div class="overlay-section p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-400">Stealth Mode</h3>
+      <p>Operate discreetly using a two-computer setup: one runs the AI server, the other acts as the client for secure, undetectable interaction.</p>
+    </div>
+    <div class="overlay-section p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-400">Real-Time Intelligence</h3>
+      <p>Get immediate answers, control devices, and access local data seamlessly.</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+<section class="overlay-section text-green-400 py-16 max-w-6xl mx-auto px-6">
+  <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">What Lynx Can Do</h2>
+  <div class="grid md:grid-cols-2 gap-12">
+    
+    <!-- Feature 1 -->
+    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-4">Study Support for PRINCE2® Methodology</h3>
+      <p class="text-green-300">
+        Lynx helps you learn and review PRINCE2 concepts efficiently. From structured explanations to interactive examples, it’s like having a personal study assistant available offline anytime.
+      </p>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-4">Smart Exam Assistance</h3>
+      <p class="text-green-300">
+        Lynx is designed to assist you in challenging exam scenarios. Using a dual-computer setup, it helps you quickly access relevant study material and guidance in real-time, improving your preparation while respecting your privacy and data security. 
+      </p>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+      <h3 class="text-2xl font-semibold mb-4">Dual Architecture</h3>
+      <p class="text-green-300">
+        Lynx can run on one computer (everything locally), or on a distributed setup of two computers for maximum stealthniness as the client part is completely invisible. 
+      </p>
+	  <p>
+	  	  <center><img src="araia.jpg" alt="ARAIA" title="" class="rounded-xl border-0"/></center>
+	  </p>
+    </div>
+
+
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="overlay-section text-green-400 text-center py-6 text-sm max-w-4xl mx-auto mt-8">
+    <p>© 2025 Lynx. All rights reserved.</p>
+  </footer>
+<!-- Cookie Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-black bg-opacity-90 text-green-400 p-4 flex flex-col md:flex-row items-center justify-between gap-4 z-50">
+  <p class="text-sm md:text-base max-w-xl">
+    This website uses cookies to improve your experience. You can accept or reject non-essential cookies.
+  </p>
+  <div class="flex gap-2">
+    <button id="accept-cookies" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg font-semibold text-black transition">
+      Accept
+    </button>
+    <button id="reject-cookies" class="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg font-semibold text-black transition">
+      Reject
+    </button>
+  </div>
+</div>
+  <!-- Matrix Effect Script -->
+<script>
+// Check if user has already made a choice
+  if(localStorage.getItem('cookiesAccepted') !== null){
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  document.getElementById('accept-cookies').addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  });
+
+  document.getElementById('reject-cookies').addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'false');
+    document.getElementById('cookie-banner').style.display = 'none';
+  });
+
+
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const letters = 'アリアAI0123456789'.split('');
+  const fontSize = 16;
+  let columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(1);
+
+  let frame = 0; // track frames
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      if (Math.random() > 0.975) continue;
+
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      // Slow the fall: update only every 2 frames
+      if (frame % 5 === 0) {
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    frame++;
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>
+</body>
+</html>
