@@ -126,7 +126,25 @@
     <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
       <h3 class="text-2xl font-semibold mb-4">Bot Control</h3>
       <p class="text-green-300">
-        Lynx connects and controls your personal Telegram Bot. This way it can inform you of it's responses in stealth mode.
+        Lynx connects and controls your personal Telegram Bot. This way it can inform you of it's responses in stealth mode.<br><br>
+		<u>Easy steps to create your own Telegram Bot:</u><br><br>
+<b>1. Create a Telegram Bot & Get Bot Token</b><br>
+- Open Telegram and search for @BotFather<br>
+- Run /start<br>
+- Run /newbot and follow prompts<br>
+- Save the Bot Token it gives you, i.e.:<br><i>(123456789:ABCdefGhIJKLmnoPQRS_tuvWxYZ)</i><br>
+<br>
+<b>2. Get Your Chat ID</b><br>
+- Start a conversation with your new bot<br>
+- Send it a message (e.g., hello)<br>
+- Visit this URL to get your chat ID: https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates<br>
+Look in the JSON for something like: <br>
+"chat": {<br>
+  "id": 123456789,<br>
+  "type": "private",<br>
+  "username": "yourusername"<br>
+}<br>
+		  
       </p>
     </div>
 
