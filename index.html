@@ -3,274 +3,661 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lynx - Artificial Intelligence Assistant</title>
-  <meta name="description" content="Lynx: Your offline, private AI assistant with real-time interaction and stealth mode capability using a dual-computer setup." />
+  <title>antonis5980 technologies – Lynx &amp; Ariadne</title>
+  <meta name="description" content="Lynx, the free offline PRINCE2 study assistant, and Ariadne, the gamified corporate training platform with powerful analytics and battles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="tailwind.min.css" rel="stylesheet">
   <style>
+    :root {
+      --primary: #2563eb;
+      --primary-soft: #dbeafe;
+      --accent: #f97316;
+      --bg: #f5f7fb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-soft: #e5e7eb;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body, html {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow-x: hidden;
-      background: transparent;
-      color: #ccc;
-	  font-family: 'Share Tech Mono', 'Courier New', monospace;
-      color: #0F0;
-	  letter-spacing: 1px;
-
+      min-height: 100%;
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(to bottom, #d1fae5 0%, #e6f7ee 45%, #f9fafb 100%);
+      color: var(--text-main);
     }
-	a, button {
-    font-family: inherit;
-  }
-    canvas#matrix {
-      position: fixed;
+    a, button {
+      font-family: inherit;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 1.25rem;
+      border: 1px solid var(--border-soft);
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.6);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.15rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: rgba(37, 99, 235, 0.08);
+      color: #1d4ed8;
+    }
+    .pill {
+      border-radius: 999px;
+    }
+    .gradient-pill {
+      background: linear-gradient(90deg, rgba(37,99,235,0.08), rgba(236,72,153,0.08));
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+    .pricing-highlight {
+      border: 2px solid rgba(37, 99, 235, 0.3);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-highlight::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(59,130,246,0.16), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .section-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+    .soft-chip {
+      background: rgba(15, 23, 42, 0.02);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.25rem 0.8rem;
+      font-size: 0.75rem;
+      color: #4b5563;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .soft-chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+    /* Top navigation pills */
+    .nav-pill {
+      background: #d1fae5; /* light emerald */
+      color: #111827;
+      border: 1px solid #a7f3d0;
+    }
+    .nav-pill:hover {
+      background: #047857; /* darker emerald */
+      color: #ffffff;
+      border-color: #065f46;
+    }
+    /* Lynx download buttons – same dark green as nav pills */
+    .lynx-download-btn {
+      background: #047857;
+      color: #ffffff;
+      border: 1px solid #065f46;
+    }
+    .lynx-download-btn:hover {
+      background: #065f46;
+      color: #ffffff;
+    }
+    .section-spacing {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+    /* Product font families (used only in carousel) */
+    .lynx-font {
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .ariadne-font {
+      font-family: "Cinzel", "Times New Roman", serif;
+      letter-spacing: 0.04em;
+    }
+    /* Discrete product sections — add more sections later with same class */
+    .product-section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      border-top: 1px solid var(--border-soft);
+    }
+    .product-section:first-of-type {
+      border-top: none;
+    }
+    /* Product section background themes */
+    .lynx-section-bg {
+      background: #e6f7ee; /* cool pale green */
+    }
+    .ariadne-section-bg {
+      background: #f1fae6; /* warmer pale green */
+    }
+    .portal-section-bg {
+      background: #ecfdf5; /* soft mint green – third variation */
+    }
+    .product-section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .product-section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      .product-section-title {
+        font-size: 2rem;
+      }
+    }
+    /* Intro carousel */
+    .intro-wrap {
+      position: relative;
+      min-height: 6rem;
+    }
+    .intro-carousel {
+      position: relative;
+      min-height: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .intro-carousel .slides-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .intro-carousel .slide {
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .intro-carousel .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .intro-carousel .slide-inner {
+      text-align: center;
+      max-width: 32rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .intro-carousel .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .intro-carousel .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .intro-carousel .carousel-dot:hover {
+      background: #94a3b8;
+    }
+    .intro-carousel .carousel-dot.active {
+      background: #2563eb;
+      transform: scale(1.2);
+    }
+    /* Particles behind header + intro */
+    #particles-js {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: black;
-    }
-    .overlay-section {
-      background-color: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(0, 255, 0, 0.4);
-      border-radius: 1rem;
+      height: 360px;
+      z-index: 0;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-
-  <!-- Hero Section -->
-  <header class="overlay-section text-green-400">
-    <div class="max-w-6xl mx-auto px-6 py-8 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4"><center><img src="https://raw.githubusercontent.com/antonis5980/antonis5980.github.io/refs/heads/main/lynx.jpg" title="" border="0" height="150px" width="150px"/></center></h1>
-      <p class="text-lg md:text-2xl mb-6">Artificial Intelligence Assistant</p>
-      <p class="max-w-2xl mx-auto mb-8">An offline, secure AI assistant designed for privacy, speed, and real-time interaction — without relying on the cloud. Features a stealth mode using a dual-computer setup for maximum discretion.</p>
+  <!-- Top navigation / brand -->
+  <header class="border-b border-slate-200/70 bg-white/70 backdrop-blur relative z-10">
+    <div class="container flex items-center justify-between gap-4 py-3">
+      <div class="flex items-center gap-3">
+        <img src="hub-logo.png"
+             alt="antonis5980"
+             class="h-12 w-12 object-contain drop-shadow-md" />
+        <div>
+          <div class="text-xs font-semibold tracking-[0.2em] text-slate-500">
+            antonis5980
+          </div>
+          <div class="text-sm text-slate-600">
+            Lynx & Ariadne Suite
+          </div>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-4 text-base text-slate-700">
+        <a href="#lynx" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
+          Lynx
+        </a>
+        <a href="#ariadne" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
+          Ariadne
+        </a>
+        <a href="#portal" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
+          Portals
+        </a>
+        <a href="#pricing" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
+          Pricing
+        </a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://www.reddit.com/r/LynxLLM/" target="_blank" rel="noopener"
+           class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
+          Lynx Community
+        </a>
+      </div>
     </div>
   </header>
-<br>
-<!-- Call to Action -->
-<section class="overlay-section text-green-400 py-16 max-w-4xl mx-auto text-center px-6">
-  <h2 class="text-3xl font-bold mb-6">Download Lynx Components</h2>
-  <p class="mb-8">Choose the part you want to get started with <br>(now with enhanced C# technology):</p>
-  <div class="flex flex-col md:flex-row justify-center gap-8">
-    <a href="LynxServer.zip" target="_blank" rel="noopener" 
-       class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-8 py-4 rounded-lg shadow-lg">
-      Download A.I. Server Part
-    </a>
-    <a href="LynxClient.zip" target="_blank" rel="noopener" 
-       class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-8 py-4 rounded-lg shadow-lg">
-      Download Client Part
-    </a>
-    <a href="https://www.reddit.com/r/LynxLLM/" target="_blank" rel="noopener" 
-       class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-8 py-4 rounded-lg shadow-lg">
-      Visit our Reddit Community
-    </a>  
-  </div>
-  <br>
-  Other free software components you also need for Lynx to operate:<br>
-  <a href="https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe" target="_blank" class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-2 py-1 rounded-lg shadow-lg">Tesseract-OCR</a>
-  &nbsp;-&nbsp;
-  <a href="https://ollama.com/download" target="_blank" class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-2 py-1 rounded-lg shadow-lg">OLLAMA</a>
-</section>
 
-  <!-- Features Section -->
-  <section id="features" class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8 text-center">
-    <div class="overlay-section p-6">
-      <h3 class="text-xl font-semibold mb-2 text-green-400">Offline & Private</h3>
-      <p>Your data never leaves your device — no internet required for processing.</p>
-    </div>
-    <div class="overlay-section p-6">
-      <h3 class="text-xl font-semibold mb-2 text-green-400">Stealth Mode</h3>
-      <p>Operate discreetly using a two-computer setup: one runs the AI server, the other acts as the client for secure, undetectable interaction.</p>
-    </div>
-    <div class="overlay-section p-6">
-      <h3 class="text-xl font-semibold mb-2 text-green-400">Real-Time Intelligence</h3>
-      <p>Get immediate answers, control devices, and access local data seamlessly.</p>
-    </div>
-  </section>
+  <!-- Particles background for header + intro -->
+  <div id="particles-js"></div>
 
-  <!-- Features Section -->
-<section class="overlay-section text-green-400 py-16 max-w-6xl mx-auto px-6">
-  <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">What Lynx Can Do</h2>
-  <div class="grid md:grid-cols-2 gap-12">
-    
-    <!-- Feature 1 -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 class="text-2xl font-semibold mb-4">Study Support for PRINCE2® Methodology</h3>
-      <p class="text-green-300">
-        Lynx helps you learn and review PRINCE2 concepts efficiently. From structured explanations to interactive examples, it’s like having a personal study assistant available offline anytime.
-      </p>
-    </div>
+  <!-- Main: two discrete product sections (more can be added later) -->
+  <main class="relative z-10">
+    <!-- Short intro: carousel with particles -->
+    <section class="container section-spacing">
+      <div class="intro-wrap">
+        <div class="intro-carousel" id="intro-carousel">
+          <div class="slides-wrap">
+            <div class="slide active" data-index="0">
+              <div class="slide-inner">
+                <p class="text-slate-600 text-base md:text-lg lynx-font">
+                  <span class="text-blue-700 font-semibold">Lynx</span> — PRINCE2&reg; exam stealth on your own hardware, zero cloud, zero cost.
+                </p>
+              </div>
+            </div>
+            <div class="slide" data-index="1">
+              <div class="slide-inner">
+                <p class="text-slate-600 text-base md:text-lg ariadne-font">
+                  <span class="text-amber-600 font-semibold">Ariadne</span> — Turn mandatory training into epic battles, missions and live scoreboards.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-dots" aria-label="Carousel navigation">
+            <button type="button" class="carousel-dot active" aria-label="Go to slide 1" data-index="0"></button>
+            <button type="button" class="carousel-dot" aria-label="Go to slide 2" data-index="1"></button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Feature 2 -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 class="text-2xl font-semibold mb-4">Smart Exam Assistance</h3>
-      <p class="text-green-300">
-        Lynx is designed to assist you in challenging exam scenarios. Using a dual-computer setup, it helps you quickly access relevant study material and guidance in real-time, improving your preparation while respecting your privacy and data security. 
-      </p>
-    </div>
+    <!-- Section 1: Lynx -->
+    <section id="lynx" class="product-section lynx-section-bg">
+      <div class="container">
+        <div class="product-section-head">
+          <div class="flex items-center gap-3">
+            <img src="https://raw.githubusercontent.com/antonis5980/antonis5980.github.io/refs/heads/main/lynx.jpg"
+                 alt="Lynx" class="h-12 w-12 rounded-xl object-cover border border-slate-200 shadow-sm" />
+            <div>
+              <h2 class="product-section-title">Lynx</h2>
+              <p class="text-sm text-slate-500">Free AI study agent for PRINCE2&reg;</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="soft-chip"><span class="soft-chip-dot"></span> Offline &amp; private</span>
+            <span class="soft-chip">Always free</span>
+          </div>
+        </div>
 
-    <!-- Feature 3 -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 class="text-2xl font-semibold mb-4">Dual Architecture</h3>
-      <p class="text-green-300">
-        Lynx can run on one computer (everything locally), or on a distributed setup of two computers for maximum stealthniness as the client part is completely invisible. 
-      </p>
-	  <p>
-	  	  <center><br><img src="https://raw.githubusercontent.com/antonis5980/antonis5980.github.io/refs/heads/main/ARAIA.jpg" alt="ARAIA" title="" class="rounded-xl border-0"/></center>
-	  </p>
-    </div>
-    <!-- Feature 4 -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 class="text-2xl font-semibold mb-4">Exam Questions for Practice</h3>
-      <p class="text-green-300">
-        Lynx provides also sixty (60) practice exam questions, just like in a real exam. <br><br>You can use them to test Lynx locally as well.
-      </p>
-	  <p>
-	  <br>
-	  <center>
-	    <a href="60q.html" target="_blank" class="bg-green-400 hover:bg-green-500 transition text-black font-semibold px-2 py-1 rounded-lg shadow-lg">See 60 free exam questions</a>
-	  </center>
-	  </p>
-    </div>
+        <p class="text-slate-600 text-sm md:text-base max-w-2xl mb-6">
+          Lynx runs on your own hardware and can operate in a dual-computer setup: the client stays invisible while your Telegram bot returns answers. Study support, 60 practice questions, mouse gestures and OLLAMA — no cloud, no account.
+        </p>
 
-    <!-- Feature 5 -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 class="text-2xl font-semibold mb-4">Bot Control</h3>
-      <p class="text-green-300">
-        Lynx connects and controls your personal Telegram Bot. This way it can inform you of it's responses in stealth mode.<br><br>
-		<u>Easy steps to create your own Telegram Bot:</u><br><br>
-		<b>1. Create a Telegram Bot & Get Bot Token</b><br>
-		- Open Telegram and search for @BotFather<br>
-		- Run /start<br>
-		- Run /newbot and follow prompts<br>
-		- Save the Bot Token it gives you, i.e.:<br><i>(123456789:ABCdefGhIJKLmnoPQRS_tuvWxYZ)</i><br>
-		<br>
-		<b>2. Get Your Chat ID</b><br>
-		- Start a conversation with your new bot<br>
-		- Send it a message (e.g., hello)<br>
-		- Visit this URL to get your chat ID: https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates<br>
-		Look in the JSON for something like: <br>
-		"chat": {<br>
-		  "id": 123456789,<br>
-		  "type": "private",<br>
-		  "username": "yourusername"<br>
-		}<br>
-		- Copy the id.<br><br>
-		Now you have all the data required for the config.txt. Update it and you're good to go!
-      </p>
-    </div>
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4 mb-6">
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">Study support</h3>
+            <p class="text-xs text-slate-600">Explain processes, themes, principles and scenarios — all offline.</p>
+          </div>
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">Exam assistance</h3>
+            <p class="text-xs text-slate-600">Dual-computer stealth: one machine runs AI/OCR, the other gets answers via Telegram.</p>
+          </div>
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">60 practice questions</h3>
+            <p class="text-xs text-slate-600 mb-2">Full set like the real exam.</p>
+            <a href="60q.html" target="_blank" class="text-xs font-semibold text-blue-600 hover:text-blue-700">View 60 questions →</a>
+          </div>
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">Telegram + gestures</h3>
+            <p class="text-xs text-slate-600">Corner-based mouse gestures; you control bot token and data.</p>
+          </div>
+        </div>
 
-    <!-- Feature 6 -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 class="text-2xl font-semibold mb-4">Mouse Gestures Only</h3>
-      <p class="text-green-300">
-        Lynx works with mouse gestures for maximum stealthniness. Below the 4-step flow is described.<br><br>
-		1. Move mouse cursor on [top left corner of your screen] for two seconds (count to 3!). This starts the invisible rectangle design mode.<br><br>
-		2. Click on the [top left corner in the web-page, of where the Question starts]. That's your top-left corner of the rectangle to be "read".<br><br>
-		3. Click on the [bottom right corner in the web-page, of where the last option/answer of the multiple choice question ends]. Imagine a rectangle that should include the question and all the possible answers.<br><br>
-		4. Move mouse cursor on [bottom-right corner of the screen] for 2 seconds.This should send the answer to the Telegram Bot !<br><br>
-		If at any moment something went wrong (even middle-process), or you clicked to the wrong spot, just put the mouse cursor for one or two seconds on the [upper-right corner of the screen]. This will "reset" the whole workflow and you can start over.
-      </p>
-	  <p>
-    </div>
-    <!-- Feature 7 -->
-    <div class="bg-black bg-opacity-70 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 class="text-2xl font-semibold mb-4">Multi-Modal</h3>
-      <p class="text-green-300">
-        Lynx can be integrated with any model the OLLAMA architecture supports.<br><br>
-		For fast responses, even with a CPU, we recommend llama3 from Meta&trade;.<br />
-        To install a model, after you download/install ollama, just open a command line and type: <i>ollama pull llama3</i>
-      </p>
-	  <p>
-    </div>
+        <div class="grid gap-5 md:grid-cols-2 mb-6">
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-2">How the stealth flow works</h3>
+            <ol class="list-decimal text-xs text-slate-600 ml-4 space-y-1">
+              <li>Mouse to <strong>top-left corner</strong> ~2s → start selection.</li>
+              <li>Click top-left of question, then bottom-right of answers.</li>
+              <li>Mouse to <strong>bottom-right corner</strong> ~2s → send and get answer via Telegram.</li>
+              <li><strong>Top-right corner</strong> ~2s to reset.</li>
+            </ol>
+          </div>
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-2">Setup</h3>
+            <p class="text-xs text-slate-600 mb-2">Create a bot with @BotFather, add token and chat ID to <code>config.txt</code>. Use OLLAMA (e.g. <code>ollama pull llama3</code>) and Tesseract OCR.</p>
+            <p class="text-xs text-emerald-700 font-semibold">Lynx is and will remain free for personal use.</p>
+          </div>
+        </div>
 
-	  
-  </div>
-</section>
+        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+          <a href="LynxServer.zip" target="_blank" rel="noopener"
+             class="lynx-download-btn inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold shadow-md transition-colors">
+            Download Lynx AI Server
+          </a>
+          <a href="LynxClient.zip" target="_blank" rel="noopener"
+             class="lynx-download-btn inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold shadow-md transition-colors">
+            Download Lynx Client
+          </a>
+          <a href="https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe" target="_blank" rel="noopener" class="text-sm text-slate-600 hover:text-blue-600">Tesseract-OCR</a>
+          <a href="https://ollama.com/download" target="_blank" rel="noopener" class="text-sm text-slate-600 hover:text-blue-600">OLLAMA</a>
+        </div>
+
+        <div class="card p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h3 class="text-sm font-semibold mb-1">Join the Lynx community</h3>
+            <p class="text-xs text-slate-600">Share setups, ask questions, see how others use Lynx.</p>
+          </div>
+          <a href="https://www.reddit.com/r/LynxLLM/" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 hover:border-blue-400 hover:bg-blue-50/40 transition-colors">
+            Join the Lynx community
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Ariadne -->
+    <section id="ariadne" class="product-section ariadne-section-bg">
+      <div class="container">
+        <div class="product-section-head">
+          <div class="flex items-center gap-3">
+            <img src="ariadne.png"
+                 alt="Ariadne" class="h-12 w-12 rounded-xl object-cover border border-slate-200 shadow-sm" />
+            <div>
+              <h2 class="product-section-title">Ariadne</h2>
+              <p class="text-sm text-slate-500">Gamified corporate training</p>
+            </div>
+          </div>
+          <div class="soft-chip">
+            <span class="soft-chip-dot"></span>
+            &euro;500 setup + &euro;6 / seat / month
+          </div>
+        </div>
+
+        <p class="text-slate-600 text-sm md:text-base max-w-2xl mb-6">
+          Ariadne turns training into a game: battles, missions, classes, teams and dashboards. Employees get a competitive journey; you get adoption, performance and engagement in real time. Best for 25+ learners and ongoing curricula.
+        </p>
+
+        <div class="grid gap-5 md:grid-cols-3 mb-8">
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-1.5">Battles, missions &amp; classes</h3>
+            <p class="text-xs text-slate-600">Learners join classes and teams, unlock player classes and battle — correct answers and activity move them up.</p>
+          </div>
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-1.5">Dashboards</h3>
+            <p class="text-xs text-slate-600">Track participation, success rates, class and branch performance at a glance.</p>
+          </div>
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-1.5">Bundles that scale</h3>
+            <p class="text-xs text-slate-600">Start with a pilot and expand. Transparent pricing by active seat.</p>
+          </div>
+        </div>
+
+        <section id="pricing">
+          <h3 class="text-base font-semibold mb-2">Pricing bundles</h3>
+          <p class="text-xs text-slate-600 mb-4">
+            <strong>&euro;500 one-time setup</strong> + <strong>&euro;6 per seat per month</strong>. Choose by expected learner count.
+          </p>
+          <div class="grid gap-5 md:grid-cols-3">
+            <div class="card p-5">
+              <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Starter</div>
+              <div class="text-lg font-bold">20–30 seats</div>
+              <div class="text-sm text-slate-600 mt-1">~&euro;180/mo seats (up to 30) + &euro;500 setup</div>
+              <ul class="text-xs text-slate-600 space-y-1 mt-3">
+                <li>✔ Full platform, 20–30 accounts</li>
+                <li>✔ Reports &amp; dashboards, email support</li>
+              </ul>
+            </div>
+            <div class="card p-5 pricing-highlight">
+              <div class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-1">Growth</div>
+              <div class="text-xs text-amber-700 font-medium mb-1">Most popular</div>
+              <div class="text-lg font-bold">up to 60 seats</div>
+              <div class="text-sm text-slate-600 mt-1">~&euro;360/mo seats + &euro;500 setup</div>
+              <ul class="text-xs text-slate-600 space-y-1 mt-3">
+                <li>✔ Everything in Starter</li>
+                <li>✔ Up to 60 accounts, more branches, priority onboarding</li>
+              </ul>
+            </div>
+            <div class="card p-5">
+              <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Enterprise</div>
+              <div class="text-lg font-bold">More than 60 seats</div>
+              <div class="text-sm text-slate-600 mt-1">Same &euro;500 setup, pricing on discussion</div>
+              <ul class="text-xs text-slate-600 space-y-1 mt-3">
+                <li>✔ Unlimited branches, custom reporting</li>
+                <li>✔ Optional consulting, SLAs</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Section 3: Custom Portal Solutions -->
+    <section id="portal" class="product-section portal-section-bg">
+      <div class="container">
+        <div class="product-section-head">
+          <div class="flex items-center gap-3">
+            <img src="portal.png"
+                 alt="Custom Portal Solutions" class="h-12 w-12 rounded-xl object-cover border border-slate-200 shadow-sm" />
+            <div>
+              <h2 class="product-section-title">Custom Portal Solutions</h2>
+              <p class="text-sm text-slate-500">Front doors to your internal universe</p>
+            </div>
+          </div>
+          <div class="soft-chip">
+            <span class="soft-chip-dot"></span>
+            Tailored portals for teams, partners &amp; customers
+          </div>
+        </div>
+
+        <p class="text-slate-600 text-sm md:text-base max-w-2xl mb-4">
+          We design and build custom web portals that feel native to your workflows: single sign-on, role-based access,
+          dashboards and integrations with your existing systems. From lightweight dashboards to full multi-tenant portals,
+          everything is tuned to your actual processes instead of forcing you into a template.
+        </p>
+        <p class="text-slate-600 text-sm md:text-base max-w-2xl mb-6">
+          The architecture is deliberately modular and evolvable: we start with a minimal core and add modules (analytics,
+          training, self-service, integrations) as you grow, avoiding big-bang rewrites. Using a Wardley Mapping–inspired
+          approach, we separate what should remain highly custom from what can be industrialized, so you keep the same portal
+          shell while the capabilities expand over time.
+        </p>
+
+        <div class="grid gap-5 md:grid-cols-3 mb-8">
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-1.5">Employee &amp; team portals</h3>
+            <p class="text-xs text-slate-600">
+              Centralize internal tools, documentation, KPIs and forms into a single, secure starting point for your staff.
+            </p>
+          </div>
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-1.5">Partner / client access</h3>
+            <p class="text-xs text-slate-600">
+              Offer self-service access to reports, orders, tickets or training material with fine-grained permissions.
+            </p>
+          </div>
+          <div class="card p-5">
+            <h3 class="text-sm font-semibold mb-1.5">Integrations that stick</h3>
+            <p class="text-xs text-slate-600">
+              Connect to your existing systems (ERP, CRM, LMS, bespoke APIs) so portals stay in sync instead of duplicating data.
+            </p>
+          </div>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="text-sm font-semibold mb-2">Engagement model</h3>
+          <p class="text-xs text-slate-600">
+            Portal projects are scoped and priced individually based on complexity, integrations and user counts.
+            If you are considering a custom portal, we can start with a short discovery call and a small prototype
+            to de-risk the bigger rollout.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="overlay-section text-green-400 text-center py-6 text-sm max-w-4xl mx-auto mt-8">
-    <p>© 2025 and beyond - Lynx is and always will be free for personal usage. Donations for its continuing evolution are welcome.</p>
+  <footer class="bg-white border-t border-slate-200/70">
+    <div class="container py-4 flex items-center justify-center text-xs text-slate-500 text-center">
+      <div>
+        &copy; 2025 and beyond &mdash; antonis5980 is one physical person, a thousand digital capabilities.
+      </div>
+    </div>
   </footer>
-<!-- Cookie Banner -->
-<div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-black bg-opacity-90 text-green-400 p-4 flex flex-col md:flex-row items-center justify-between gap-4 z-50">
-  <p class="text-sm md:text-base max-w-xl">
-    This website uses cookies to improve your experience. You can accept or reject non-essential cookies.
-  </p>
-  <div class="flex gap-2">
-    <button id="accept-cookies" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg font-semibold text-black transition">
-      Accept
-    </button>
-    <button id="reject-cookies" class="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg font-semibold text-black transition">
-      Reject
-    </button>
+
+  <!-- Cookie Banner (light theme) -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white/95 border-t border-slate-200 shadow-[0_-8px_30px_rgba(15,23,42,0.12)] text-slate-700 p-4 flex flex-col md:flex-row items-center justify-between gap-4 z-50">
+    <p class="text-xs md:text-sm max-w-xl">
+      This website uses essential cookies to remember your preferences. You can accept or reject non‑essential cookies at any time.
+    </p>
+    <div class="flex gap-2">
+      <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-xs md:text-sm font-semibold text-white shadow-sm shadow-blue-500/30 transition-colors">
+        Accept
+      </button>
+      <button id="reject-cookies" class="border border-slate-300 bg-white hover:border-slate-400 px-4 py-2 rounded-full text-xs md:text-sm font-semibold text-slate-800 transition-colors">
+        Reject
+      </button>
+    </div>
   </div>
-</div>
-  <!-- Matrix Effect Script -->
-<script>
-// Check if user has already made a choice
-  if(localStorage.getItem('cookiesAccepted') !== null){
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
 
-  document.getElementById('accept-cookies').addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
-    document.getElementById('cookie-banner').style.display = 'none';
-  });
+  <script src="particles.js"></script>
+  <script src="particles-app.js"></script>
 
-  document.getElementById('reject-cookies').addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'false');
-    document.getElementById('cookie-banner').style.display = 'none';
-  });
+  <script>
+    // Simple cookie banner logic
+    (function () {
+      var banner = document.getElementById('cookie-banner');
+      if (!banner) return;
 
-
-  const canvas = document.getElementById('matrix');
-  const ctx = canvas.getContext('2d');
-
-  function resizeCanvas() {
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-  }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  const letters = 'アリアAI0123456789'.split('');
-  const fontSize = 16;
-  let columns = Math.floor(canvas.width / fontSize);
-  const drops = Array(columns).fill(1);
-
-  let frame = 0; // track frames
-
-  function draw() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = '#0F0';
-    ctx.font = fontSize + 'px monospace';
-
-    for (let i = 0; i < drops.length; i++) {
-      if (Math.random() > 0.975) continue;
-
-      const text = letters[Math.floor(Math.random() * letters.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-      // Slow the fall: update only every 2 frames
-      if (frame % 5 === 0) {
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
+      if (localStorage.getItem('cookiesAccepted') !== null) {
+        banner.style.display = 'none';
+        return;
       }
-    }
 
-    frame++;
-    requestAnimationFrame(draw);
-  }
+      var accept = document.getElementById('accept-cookies');
+      var reject = document.getElementById('reject-cookies');
 
-  draw();
-</script>
+      if (accept) {
+        accept.addEventListener('click', function () {
+          localStorage.setItem('cookiesAccepted', 'true');
+          banner.style.display = 'none';
+        });
+      }
+      if (reject) {
+        reject.addEventListener('click', function () {
+          localStorage.setItem('cookiesAccepted', 'false');
+          banner.style.display = 'none';
+        });
+      }
+    })();
+
+    // Intro carousel: auto-rotate and dot navigation
+    (function () {
+      var carousel = document.getElementById('intro-carousel');
+      if (!carousel) return;
+      var slides = carousel.querySelectorAll('.slide');
+      var dots = carousel.querySelectorAll('.carousel-dot');
+      var current = 0;
+      var total = slides.length;
+      var interval;
+
+      function goTo(index) {
+        current = (index + total) % total;
+        slides.forEach(function (s, i) {
+          s.classList.toggle('active', i === current);
+        });
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+          d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        });
+      }
+
+      function next() {
+        goTo(current + 1);
+      }
+
+      function startInterval() {
+        interval = setInterval(next, 4000);
+      }
+
+      function stopInterval() {
+        if (interval) clearInterval(interval);
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          stopInterval();
+          goTo(i);
+          startInterval();
+        });
+      });
+
+      carousel.addEventListener('mouseenter', stopInterval);
+      carousel.addEventListener('mouseleave', startInterval);
+
+      startInterval();
+    })();
+  </script>
 </body>
 </html>
