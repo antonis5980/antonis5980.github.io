@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>antonis5980 technologies – Lynx &amp; Ariadne</title>
-  <meta name="description" content="Lynx, the free offline PRINCE2 study assistant, and Ariadne, the gamified corporate training platform with powerful analytics and battles." />
+  <title>antonis5980 technologies – Lynx, Ariadne, Portals &amp; C.G.A</title>
+  <meta name="description" content="Lynx (PRINCE2 offline AI), Ariadne (gamified training), custom portals, and Cam Grid App (C.G.A) — a resilient 4×RTSP monitoring grid with stream recovery." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -130,6 +130,16 @@
       background: #065f46;
       color: #ffffff;
     }
+    /* C.G.A download — sky tint to match section */
+    .cga-download-btn {
+      background: #0369a1;
+      color: #ffffff;
+      border: 1px solid #075985;
+    }
+    .cga-download-btn:hover {
+      background: #075985;
+      color: #ffffff;
+    }
     .section-spacing {
       padding-top: 3.5rem;
       padding-bottom: 3.5rem;
@@ -160,6 +170,55 @@
     }
     .portal-section-bg {
       background: #ecfdf5; /* soft mint green – third variation */
+    }
+    .cga-section-bg {
+      background: #eef6ff; /* cool pale blue — surveillance / clarity */
+    }
+    /* Two-column preview: custom grid (Tailwind v2 bundle has no arbitrary grid-template). */
+    .cga-preview-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      /* Text ~75%, screenshot ~25% (3:1). */
+      .cga-preview-row {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+        gap: 2rem 2.5rem;
+      }
+      .cga-figures-col {
+        justify-self: stretch;
+        min-width: 0;
+      }
+      .cga-preview-row .cga-shot-wrap {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .cga-preview-row .cga-shot-wrap img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media (min-width: 1280px) {
+      .cga-preview-row {
+        gap: 2rem 3rem;
+      }
+    }
+    /* Mobile: thumbnail ~30% intrinsic; md+: image fills the 25% grid track. */
+    .cga-shot-wrap {
+      width: fit-content;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cga-shot-wrap img {
+      display: block;
+      width: 30%;
+      height: auto;
     }
     .product-section-head {
       display: flex;
@@ -294,7 +353,7 @@
             antonis5980
           </div>
           <div class="text-sm text-slate-600">
-            Lynx & Ariadne Suite
+            Product suite
           </div>
         </div>
       </div>
@@ -307,6 +366,9 @@
         </a>
         <a href="#portal" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
           Portals
+        </a>
+        <a href="#cga" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
+          C.G.A
         </a>
       </nav>
       <div class="hidden md:flex items-center gap-3">
@@ -321,7 +383,7 @@
   <!-- Particles background for header + intro -->
   <div id="particles-js"></div>
 
-  <!-- Main: two discrete product sections (more can be added later) -->
+  <!-- Main: discrete product sections -->
   <main class="relative z-10">
     <!-- Short intro: carousel with particles -->
     <section class="container section-spacing">
@@ -349,11 +411,19 @@
                 </p>
               </div>
             </div>
+            <div class="slide" data-index="3">
+              <div class="slide-inner">
+                <p class="text-slate-600 text-base md:text-lg">
+                  <span class="font-semibold text-sky-800">Cam Grid App (C.G.A)</span> — Four RTSP cameras in a grid, with one-click stream recovery when Wi-Fi or links drop.
+                </p>
+              </div>
+            </div>
           </div>
           <div class="carousel-dots" aria-label="Carousel navigation">
             <button type="button" class="carousel-dot active" aria-label="Go to slide 1" data-index="0"></button>
             <button type="button" class="carousel-dot" aria-label="Go to slide 2" data-index="1"></button>
             <button type="button" class="carousel-dot" aria-label="Go to slide 3" data-index="2"></button>
+            <button type="button" class="carousel-dot" aria-label="Go to slide 4" data-index="3"></button>
           </div>
         </div>
       </div>
@@ -577,6 +647,130 @@
             Portal projects are scoped and priced individually based on complexity, integrations and user counts.
             If you are considering a custom portal, we can start with a short discovery call and a small prototype
             to de-risk the bigger rollout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Cam Grid App (C.G.A) -->
+    <section id="cga" class="product-section cga-section-bg">
+      <div class="container">
+        <div class="product-section-head">
+          <div class="flex items-center gap-3">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-sky-200/80 bg-gradient-to-br from-white via-sky-50 to-sky-100/90 shadow-sm ring-1 ring-sky-200/40"
+                 aria-hidden="true">
+              <svg class="h-8 w-8 drop-shadow-sm"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 32 32">
+                <defs>
+                  <linearGradient id="cgaMarkGrad" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7dd3fc" />
+                    <stop offset="55%" stop-color="#0ea5e9" />
+                    <stop offset="100%" stop-color="#0369a1" />
+                  </linearGradient>
+                  <linearGradient id="cgaMarkFeather" x1="4" y1="2" x2="18" y2="14" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.95" />
+                    <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.35" />
+                  </linearGradient>
+                </defs>
+                <!-- Light quill accent (suggests a small / nimble app) -->
+                <path fill="url(#cgaMarkFeather)" d="M5.5 3.2c2.8 2.4 5.2 5.8 6.8 9.2.35.75.1 1.45-.45 1.85-.55.4-1.35.35-2-.35-1.55-1.7-3.35-4.85-4.55-9.45-.2-.75.15-1.35.75-1.55.2-.05.35-.1.5-.1Z" />
+                <!-- 2×2 camera panes -->
+                <rect x="10" y="8" width="9" height="9" rx="2.2" fill="url(#cgaMarkGrad)" opacity="0.98" />
+                <rect x="21" y="8" width="9" height="9" rx="2.2" fill="url(#cgaMarkGrad)" opacity="0.88" />
+                <rect x="10" y="19" width="9" height="9" rx="2.2" fill="url(#cgaMarkGrad)" opacity="0.92" />
+                <rect x="21" y="19" width="9" height="9" rx="2.2" fill="url(#cgaMarkGrad)" opacity="0.82" />
+                <path fill="#f0f9ff" fill-opacity="0.55" d="M12.2 9.6h2.3v1.1h-2.3V9.6Zm0 11h2.3v1.1h-2.3v-1.1Zm11-11h2.3v1.1h-2.3V9.6Zm0 11h2.3v1.1h-2.3v-1.1Z" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="product-section-title">Cam Grid App <span class="text-sky-800 font-semibold">(C.G.A)</span></h2>
+              <p class="text-sm text-slate-500">Four RTSP streams, resilient grid viewing</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="soft-chip"><span class="soft-chip-dot"></span> 4-camera grid</span>
+            <span class="soft-chip">Stream re-init</span>
+          </div>
+        </div>
+
+        <div class="cga-preview-row">
+          <div class="cga-copy-col min-w-0">
+            <p class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-sky-900/65 mb-2">
+              Application preview
+            </p>
+            <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-5 max-w-none">
+              <span class="font-semibold text-slate-800">The working grid</span> — the same four-pane layout you run day to day. When a stream stutters or dies, you recover that tile without tearing down the whole window.
+            </p>
+            <div class="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3">
+              <a href="CGA.zip.001"
+                 download="CGA.zip.001"
+                 class="cga-download-btn inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold shadow-md transition-colors text-center">
+                Download CGA.zip.001
+              </a>
+              <a href="CGA.zip.002"
+                 download="CGA.zip.002"
+                 class="cga-download-btn inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold shadow-md transition-colors text-center">
+                Download CGA.zip.002
+              </a>
+            </div>
+            <p class="text-[0.7rem] text-slate-500 mt-2 max-w-none leading-snug">
+              Split archive: save CGA.zip.001 and CGA.zip.002 in the same folder, then open or extract starting from .001.
+            </p>
+          </div>
+          <div class="cga-figures-col min-w-0 self-start w-full">
+            <figure class="m-0 w-full max-w-full">
+              <div class="cga-shot-wrap">
+                <img src="CGA.jpg"
+                     alt="Screenshot of Cam Grid App showing four RTSP camera feeds in a 2×2 grid on Windows"
+                     loading="lazy"
+                     decoding="async" />
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mb-8 max-w-none border-t border-sky-900/10 pt-6">
+          <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+            <span class="font-semibold text-slate-800">Windows desktop</span> — C.G.A is a small native program (not a browser plugin).
+            It runs on <strong>Windows 7</strong> through <strong>Windows 11</strong>; use 64-bit on newer versions when you can.
+            The same build suits older monitoring PCs and current workstations alike.
+          </p>
+          <p class="text-[0.65rem] text-slate-400 mt-3 leading-snug">
+            Microsoft and Windows are trademarks of the Microsoft group of companies.
+          </p>
+        </div>
+
+        <p class="text-slate-600 text-sm md:text-base max-w-none mb-4">
+          C.G.A is built for situations where ordinary viewers fall over: patchy Wi-Fi on cheap cameras, slow links, interference, or RTSP sources that pause and never come back without a full reconnect. The app lays out <strong>four RTSP feeds in a fixed grid</strong> so you always see the same layout, and each cell can <strong>re-initialize its stream</strong> when the picture freezes, goes black, or the connection is lost — without restarting the whole application.
+        </p>
+        <p class="text-slate-600 text-sm md:text-base max-w-none mb-6">
+          Use it anywhere you need dependable live tiles: small security setups, shop floors, remote equipment checks, or any monitoring stack where streams drop periodically and fragile apps make that painful.
+        </p>
+
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4 mb-6">
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">2×2 grid, four RTSP inputs</h3>
+            <p class="text-xs text-slate-600">Direct RTSP URLs — one pane per camera, consistent framing.</p>
+          </div>
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">Recover broken streams</h3>
+            <p class="text-xs text-slate-600">Re-open the transport and decoder for a single tile when the source stalls or drops.</p>
+          </div>
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">Built for bad networks</h3>
+            <p class="text-xs text-slate-600">Designed around flaky Wi-Fi and bursty links, not only lab-grade connectivity.</p>
+          </div>
+          <div class="card p-4">
+            <h3 class="text-sm font-semibold mb-1.5">Replace brittle viewers</h3>
+            <p class="text-xs text-slate-600">Drop-in mindset for anything that locks up when an RTSP endpoint hiccups.</p>
+          </div>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="text-sm font-semibold mb-2">Why C.G.A exists</h3>
+          <p class="text-xs text-slate-600">
+            Many off-the-shelf or browser-based tools assume stable streams. In the real world, consumer cameras and congested wireless paths cause periodic outages. C.G.A keeps the UI stable and gives you a clear path to get each stream live again — so monitoring keeps working when conditions are imperfect.
           </p>
         </div>
       </div>
