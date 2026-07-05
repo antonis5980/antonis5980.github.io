@@ -1,360 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BVEXC97F7V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BVEXC97F7V');
-</script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>antonis5980 technologies – Lynx, Ariadne, Portals &amp; C.G.A</title>
-  <meta name="description" content="Lynx (PRINCE2 offline AI), Ariadne (gamified training), custom portals, and Cam Grid App (C.G.A) — a resilient 4×RTSP monitoring grid with stream recovery." />
+  <title>antonis5980 — Harmony Model, Lynx &amp; C.G.A</title>
+  <meta name="description" content="The Harmony Model — mature portal ecosystem with ARIADNE training, PMO, field mobile and automation. Plus Lynx (PRINCE2 AI) and Cam Grid App." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="tailwind.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-soft: #dbeafe;
-      --accent: #f97316;
-      --bg: #f5f7fb;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --card-bg: #ffffff;
-      --border-soft: #e5e7eb;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(to bottom, #d1fae5 0%, #e6f7ee 45%, #f9fafb 100%);
-      color: var(--text-main);
-    }
-    a, button {
-      font-family: inherit;
-    }
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: 1.25rem;
-      border: 1px solid var(--border-soft);
-      box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.08),
-        0 0 0 1px rgba(255, 255, 255, 0.6);
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.15rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      background: rgba(37, 99, 235, 0.08);
-      color: #1d4ed8;
-    }
-    .pill {
-      border-radius: 999px;
-    }
-    .gradient-pill {
-      background: linear-gradient(90deg, rgba(37,99,235,0.08), rgba(236,72,153,0.08));
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.4);
-    }
-    .pricing-highlight {
-      border: 2px solid rgba(37, 99, 235, 0.3);
-      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.18);
-      position: relative;
-      overflow: hidden;
-    }
-    .pricing-highlight::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at 0 0, rgba(59,130,246,0.16), transparent 55%);
-      opacity: 0.8;
-      pointer-events: none;
-    }
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-    .section-kicker {
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-    }
-    .soft-chip {
-      background: rgba(15, 23, 42, 0.02);
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 0.25rem 0.8rem;
-      font-size: 0.75rem;
-      color: #4b5563;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .soft-chip-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-    /* Top navigation pills */
-    .nav-pill {
-      background: #d1fae5; /* light emerald */
-      color: #111827;
-      border: 1px solid #a7f3d0;
-    }
-    .nav-pill:hover {
-      background: #047857; /* darker emerald */
-      color: #ffffff;
-      border-color: #065f46;
-    }
-    /* Lynx download buttons – same dark green as nav pills */
-    .lynx-download-btn {
-      background: #047857;
-      color: #ffffff;
-      border: 1px solid #065f46;
-    }
-    .lynx-download-btn:hover {
-      background: #065f46;
-      color: #ffffff;
-    }
-    /* C.G.A download — sky tint to match section */
-    .cga-download-btn {
-      background: #0369a1;
-      color: #ffffff;
-      border: 1px solid #075985;
-    }
-    .cga-download-btn:hover {
-      background: #075985;
-      color: #ffffff;
-    }
-    .section-spacing {
-      padding-top: 3.5rem;
-      padding-bottom: 3.5rem;
-    }
-    /* Product font families (used only in carousel) */
-    .lynx-font {
-      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    .ariadne-font {
-      font-family: "Cinzel", "Times New Roman", serif;
-      letter-spacing: 0.04em;
-    }
-    /* Discrete product sections — add more sections later with same class */
-    .product-section {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
-      border-top: 1px solid var(--border-soft);
-    }
-    .product-section:first-of-type {
-      border-top: none;
-    }
-    /* Product section background themes */
-    .lynx-section-bg {
-      background: #e6f7ee; /* cool pale green */
-    }
-    .ariadne-section-bg {
-      background: #f1fae6; /* warmer pale green */
-    }
-    .portal-section-bg {
-      background: #ecfdf5; /* soft mint green – third variation */
-    }
-    .cga-section-bg {
-      background: #eef6ff; /* cool pale blue — surveillance / clarity */
-    }
-    /* Two-column preview: custom grid (Tailwind v2 bundle has no arbitrary grid-template). */
-    .cga-preview-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: 1.5rem;
-    }
-    @media (min-width: 768px) {
-      /* Text ~75%, screenshot ~25% (3:1). */
-      .cga-preview-row {
-        grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
-        gap: 2rem 2.5rem;
-      }
-      .cga-figures-col {
-        justify-self: stretch;
-        min-width: 0;
-      }
-      .cga-preview-row .cga-shot-wrap {
-        width: 100%;
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      .cga-preview-row .cga-shot-wrap img {
-        width: 100%;
-        height: auto;
-      }
-    }
-    @media (min-width: 1280px) {
-      .cga-preview-row {
-        gap: 2rem 3rem;
-      }
-    }
-    /* Mobile: thumbnail ~30% intrinsic; md+: image fills the 25% grid track. */
-    .cga-shot-wrap {
-      width: fit-content;
-      max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cga-shot-wrap img {
-      display: block;
-      width: 30%;
-      height: auto;
-    }
-    .product-section-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .product-section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-    @media (min-width: 768px) {
-      .section-title {
-        font-size: 2rem;
-      }
-      .product-section-title {
-        font-size: 2rem;
-      }
-    }
-    /* Intro carousel */
-    .intro-wrap {
-      position: relative;
-      min-height: 6rem;
-    }
-    .intro-carousel {
-      position: relative;
-      min-height: 5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-    }
-    .intro-carousel .slides-wrap {
-      position: relative;
-      width: 100%;
-      min-height: 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .intro-carousel .slide {
-      position: absolute;
-      left: 0;
-      right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    .intro-carousel .slide.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .intro-carousel .slide-inner {
-      text-align: center;
-      max-width: 32rem;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    .intro-carousel .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1.25rem;
-    }
-    .intro-carousel .carousel-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #cbd5e1;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .intro-carousel .carousel-dot:hover {
-      background: #94a3b8;
-    }
-    .intro-carousel .carousel-dot.active {
-      background: #2563eb;
-      transform: scale(1.2);
-    }
-    /* Particles behind header + intro */
-    #particles-js {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 360px;
-      z-index: 0;
-      pointer-events: none;
-    }
-    /* 3D bar effect for top nav */
-    .top-bar {
-      background: linear-gradient(to bottom, rgba(255,255,255,0.96), rgba(248,250,252,0.98));
-      box-shadow:
-        0 10px 25px rgba(15, 23, 42, 0.18),
-        0 1px 0 rgba(255, 255, 255, 0.9);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.45);
-      position: relative;
-      z-index: 10;
-    }
-    .top-bar::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -4px;
-      height: 8px;
-      background: radial-gradient(circle at 50% 0, rgba(15,23,42,0.15), transparent 70%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-  </style>
+  <link href="site.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Top navigation / brand -->
   <header class="top-bar backdrop-blur">
-    <div class="container flex items-center justify-between gap-4 py-3">
-      <div class="flex items-center gap-3">
+    <div class="container flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3">
+      <div class="flex items-center gap-3 shrink-0">
         <img src="hub-logo.png"
              alt="antonis5980"
              class="h-12 w-12 object-contain drop-shadow-md" />
@@ -363,30 +23,23 @@
             antonis5980
           </div>
           <div class="text-sm text-slate-600">
-            Product suite
+            Harmony Model
           </div>
         </div>
       </div>
-      <nav class="hidden md:flex items-center gap-4 text-base text-slate-700">
-        <a href="#lynx" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
-          Lynx
-        </a>
-        <a href="#ariadne" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
-          Ariadne
-        </a>
-        <a href="#portal" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
-          Portals
-        </a>
-        <a href="#cga" class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
-          C.G.A
-        </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="#intro" class="nav-pill inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-semibold transition-colors">Home</a>
+        <a href="#portal" class="nav-pill inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-semibold transition-colors">Harmony</a>
+        <a href="#harmony" class="nav-pill nav-pill-sub inline-flex items-center justify-center rounded-full font-semibold transition-colors">Model</a>
+        <a href="#families" class="nav-pill nav-pill-sub inline-flex items-center justify-center rounded-full font-semibold transition-colors">Lines</a>
+        <a href="#modules" class="nav-pill nav-pill-sub inline-flex items-center justify-center rounded-full font-semibold transition-colors">Modules</a>
+        <a href="#problem" class="nav-pill nav-pill-sub inline-flex items-center justify-center rounded-full font-semibold transition-colors">Why</a>
+        <a href="#solution" class="nav-pill nav-pill-sub inline-flex items-center justify-center rounded-full font-semibold transition-colors">Compare</a>
+        <a href="#offering" class="nav-pill nav-pill-sub inline-flex items-center justify-center rounded-full font-semibold transition-colors">Packages</a>
+        <a href="#pitch" class="nav-pill nav-pill-sub inline-flex items-center justify-center rounded-full font-semibold transition-colors">Narrative</a>
+        <a href="#lynx" class="nav-pill inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-semibold transition-colors">Lynx</a>
+        <a href="#cga" class="nav-pill inline-flex items-center justify-center rounded-full px-3 py-1.5 text-sm font-semibold transition-colors">C.G.A</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="https://www.reddit.com/r/LynxLLM/" target="_blank" rel="noopener"
-           class="nav-pill inline-flex items-center justify-center rounded-full px-4 py-1.5 text-sm font-semibold transition-colors">
-          Lynx Community
-        </a>
-      </div>
     </div>
   </header>
 
@@ -396,32 +49,25 @@
   <!-- Main: discrete product sections -->
   <main class="relative z-10">
     <!-- Short intro: carousel with particles -->
-    <section class="container section-spacing">
+    <section id="intro" class="container section-spacing">
       <div class="intro-wrap">
         <div class="intro-carousel" id="intro-carousel">
           <div class="slides-wrap">
             <div class="slide active" data-index="0">
               <div class="slide-inner">
-                <p class="text-slate-600 text-base md:text-lg lynx-font">
-                  <span class="font-semibold">Lynx</span> — PRINCE2&reg; exam stealth on your own hardware, zero cloud, zero cost.
+                <p class="text-slate-600 text-base md:text-lg">
+                  <span class="font-semibold text-emerald-700">Harmony Model</span> — Portals, ARIADNE training, PMO, field mobile &amp; automation on one platform core.
                 </p>
               </div>
             </div>
             <div class="slide" data-index="1">
               <div class="slide-inner">
-                <p class="text-slate-600 text-base md:text-lg ariadne-font">
-                  <span class="text-amber-600 font-semibold">Ariadne</span> — Turn mandatory training into epic battles, missions and live scoreboards.
+                <p class="text-slate-600 text-base md:text-lg">
+                  <span class="font-semibold">Lynx</span> — PRINCE2&reg; exam stealth on your own hardware, zero cloud, zero cost.
                 </p>
               </div>
             </div>
             <div class="slide" data-index="2">
-              <div class="slide-inner">
-                <p class="text-slate-600 text-base md:text-lg">
-                  <span class="font-semibold text-emerald-700">Custom Portal Solutions</span> — One evolving front door for teams, partners and clients.
-                </p>
-              </div>
-            </div>
-            <div class="slide" data-index="3">
               <div class="slide-inner">
                 <p class="text-slate-600 text-base md:text-lg">
                   <span class="font-semibold text-sky-800">Cam Grid App (C.G.A)</span> — Four RTSP cameras in a grid, with one-click stream recovery when Wi-Fi or links drop.
@@ -433,13 +79,472 @@
             <button type="button" class="carousel-dot active" aria-label="Go to slide 1" data-index="0"></button>
             <button type="button" class="carousel-dot" aria-label="Go to slide 2" data-index="1"></button>
             <button type="button" class="carousel-dot" aria-label="Go to slide 3" data-index="2"></button>
-            <button type="button" class="carousel-dot" aria-label="Go to slide 4" data-index="3"></button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 1: Lynx -->
+    <!-- Bridge: standalone tools → Harmony platform -->
+    <section class="ecosystem-bridge" aria-label="Product ecosystem overview">
+      <div class="container">
+        <div class="ecosystem-bridge-inner">
+          <p class="ecosystem-bridge-kicker">The Harmony Model</p>
+          <h2 class="ecosystem-bridge-title">Enterprise software, composed as one</h2>
+          <p class="ecosystem-bridge-text">
+            The Harmony Model is the centre of gravity — portals that weave HR, ARIADNE gamified training, project delivery, field mobile, and automation into one mature operating system. Lynx and C.G.A are focused companions alongside it.
+          </p>
+          <div class="ecosystem-thread" aria-label="Product connections">
+            <a href="#portal">Harmony</a>
+            <span class="thread-arrow" aria-hidden="true">·</span>
+            <a href="#lynx">Lynx</a>
+            <span class="thread-arrow" aria-hidden="true">·</span>
+            <a href="#cga">C.G.A</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Harmony Model — full portal ecosystem -->
+    <div id="portal" class="portal-leaflet">
+
+<section class="hero">
+    <div class="wrap">
+        <div class="hero-badge">The Harmony Model</div>
+        <h1>The Harmony Model.<br>Every Application in Concert.</h1>
+        <p class="tagline">Not a collection of disconnected apps — a composed ecosystem where Portal SME &amp; Enterprise Edition, field mobile applications, and automations share one platform DNA. HR, projects, field work, compliance, and training move as one.</p>
+        <div class="hero-stats">
+            <div class="hero-stat"><strong>5</strong><span>Harmony principles</span></div>
+            <div class="hero-stat"><strong>4</strong><span>Product lines in concert</span></div>
+            <div class="hero-stat"><strong>40+</strong><span>Modules, one backbone</span></div>
+            <div class="hero-stat"><strong>Live</strong><span>Multi-industry deployments</span></div>
+        </div>
+    </div>
+</section>
+
+<section id="harmony" class="harmony-band">
+    <div class="wrap">
+        <div class="section-label">Architecture Philosophy</div>
+        <h2>The Harmony Model</h2>
+        <p class="lead harmony-lead">Most vendors sell separate apps and bolt on integrations later. The Harmony Model is different: four product lines composed around a shared platform core — each module an instrument, the organisation the orchestra. Data flows inward. Permissions gate every action. Automation carries work forward. External parties stay outside the firewall, yet remain part of the same thread.</p>
+
+        <div class="pitch-box harmony-quote">
+            "Harmony is not integration after the fact. It is shared DNA from day one — one database philosophy, one permission model, one audit trail. When a client receives a deliverable through the secure vault, the project dossier updates automatically. When HR approves leave, the same identity exists in PMO and on site. No manual bridges. No duplicate truth."
+            <cite>— The Harmony promise</cite>
+        </div>
+
+        <div class="harmony-principles">
+            <div class="harmony-principle">
+                <div class="principle-head">
+                    <span class="glyph glyph-truth" aria-hidden="true"></span>
+                    <span class="principle-num">01</span>
+                </div>
+                <h4>One Source of Truth</h4>
+                <p>A shared SQL backbone holds master data once. Projects, people, assets, and submissions reference the same records — not copies synced overnight.</p>
+            </div>
+            <div class="harmony-principle">
+                <div class="principle-head">
+                    <span class="glyph glyph-access" aria-hidden="true"></span>
+                    <span class="principle-num">02</span>
+                </div>
+                <h4>Unified Access Layer</h4>
+                <p>Role-based permissions gate every screen across every product family. The same identity, the same approval logic — from leave requests to certification sign-off.</p>
+            </div>
+            <div class="harmony-principle">
+                <div class="principle-head">
+                    <span class="glyph glyph-flow" aria-hidden="true"></span>
+                    <span class="principle-num">03</span>
+                </div>
+                <h4>Continuous Flow</h4>
+                <p>Plan in the portal, execute on mobile, notify via automation. Work moves forward without email chasing or spreadsheet handoffs.</p>
+            </div>
+            <div class="harmony-principle">
+                <div class="principle-head">
+                    <span class="glyph glyph-boundary" aria-hidden="true"></span>
+                    <span class="principle-num">04</span>
+                </div>
+                <h4>Trusted Boundaries</h4>
+                <p>Internal teams work in harmony inside the ecosystem. External clients, auditors, and funders use a secure vault — PIN-locked, audited, and linked back to PMO.</p>
+            </div>
+            <div class="harmony-principle">
+                <div class="principle-head">
+                    <span class="glyph glyph-compose" aria-hidden="true"></span>
+                    <span class="principle-num">05</span>
+                </div>
+                <h4>Progressive Composition</h4>
+                <p>Start with one module. Add families as the organisation matures. No rip-and-replace — each new instrument joins the orchestra without re-tuning the rest.</p>
+            </div>
+        </div>
+
+        <div class="harmony-diagram">
+            <p class="harmony-diagram-label">Four product lines · one core</p>
+            <div class="ecosystem-flow harmony-spokes">
+                <div class="flow-node"><span class="glyph glyph-sm glyph-portal" aria-hidden="true"></span><strong>Portal SME Edition</strong><span>HR · Retail ops · Multi-company</span></div>
+                <div class="flow-node"><span class="glyph glyph-sm glyph-ariadne" aria-hidden="true"></span><strong>Portal Enterprise Edition</strong><span>PMO · Certs · Fleet · Work orders</span></div>
+                <div class="flow-node"><span class="glyph glyph-sm glyph-mobile" aria-hidden="true"></span><strong>Field Mobile</strong><span>FieldTask · FieldFleet · FieldOps</span></div>
+                <div class="flow-node"><span class="glyph glyph-sm glyph-auto" aria-hidden="true"></span><strong>Automation &amp; Integration</strong><span>Mailers · ERP · APIs · AI</span></div>
+            </div>
+            <div class="harmony-core">
+                <span class="glyph glyph-core glyph-on-dark" aria-hidden="true"></span>
+                <strong>Shared Platform Core</strong>
+                <span>SQL Server · RBAC · Workflows · Audit History · Email Automation</span>
+            </div>
+        </div>
+
+        <h3 class="harmony-subhead">A Day in Harmony</h3>
+        <p class="family-desc">One continuous thread — from field to boardroom to client.</p>
+        <div class="harmony-journey">
+            <div class="journey-step">
+                <div class="journey-marker glyph-field" aria-hidden="true"></div>
+                <div class="journey-content">
+                    <h4>Morning — Field</h4>
+                    <p>An engineer completes a work order in FieldTask. Photos and status sync as JSON — no phone call, no re-entry.</p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-marker glyph-pmo" aria-hidden="true"></div>
+                <div class="journey-content">
+                    <h4>Midday — PMO</h4>
+                    <p>The project manager opens PMTOOL. Milestone health, WO completion, and fleet status reflect the same live data the field just captured.</p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-marker glyph-client" aria-hidden="true"></div>
+                <div class="journey-content">
+                    <h4>Afternoon — Client</h4>
+                    <p>A deliverable goes out through the secure client vault. PIN-locked, audited, one-time download — and the submission status appears instantly in the project dossier.</p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-marker glyph-compliance" aria-hidden="true"></div>
+                <div class="journey-content">
+                    <h4>Evening — Compliance</h4>
+                    <p>CertMailer notifies the CFO. Certification moves through the approval chain in CERTS. Audit history records every step — ready for funders.</p>
+                </div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-marker glyph-people" aria-hidden="true"></div>
+                <div class="journey-content">
+                    <h4>Anytime — People</h4>
+                    <p>The same employee who worked on site requests leave in Portal SME Edition. One identity, one org chart, one permission layer — harmony across HR and operations. Training runs through the built-in <a href="#modules" class="leaflet-crosslink">ARIADNE module</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="families">
+    <div class="wrap">
+        <div class="section-label">Product &amp; Service Lines</div>
+        <h2>Four Lines, One Orchestra</h2>
+        <p class="lead">After the Harmony Model comes the repertoire — modular product lines clients adopt individually or compose into a full digital operating system.</p>
+
+        <div class="grid-2">
+            <div class="card featured">
+                <span class="module-tag">FLAGSHIP</span>
+                <div class="card-icon">🏛️</div>
+                <h4>Portal SME Edition</h4>
+                <p>Modular intranet for HR, expenses, appraisals, daily reporting, delivery proof, documents, and gamified training. Built for multi-brand groups, retail chains, and growing SMEs.</p>
+            </div>
+            <div class="card featured">
+                <span class="module-tag">ENTERPRISE</span>
+                <div class="card-icon">🧭</div>
+                <h4>Portal Enterprise Edition</h4>
+                <p>Full project-delivery portal: PMO cockpit, central project dossier, certifications, KPI milestones, fleet, work orders, secure client vault, technical visits, SOP library, and BuDA AI advisor.</p>
+            </div>
+            <div class="card">
+                <span class="module-tag">MOBILE</span>
+                <div class="card-icon">📱</div>
+                <h4>Field Mobile Suite</h4>
+                <p>FieldTask (work orders), FieldFleet (vehicle delivery photos), FieldOps (general field). PIN-gated app store inside the portal. Offline-capable field evidence.</p>
+            </div>
+            <div class="card">
+                <span class="module-tag">AUTOMATION</span>
+                <div class="card-icon">⚡</div>
+                <h4>Automation &amp; Integration</h4>
+                <p>Scheduled services: certification digests, milestone alerts, progress mailers, workflow notifications. SoftOne ERP bridges and AI add-ons.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="modules">
+    <div class="wrap">
+        <div class="section-label">Module Catalogue</div>
+        <h2>Every Module — By Product Line</h2>
+        <p class="lead">All modules below exist in production today. Offered à la carte or as tiered packages — each one an instrument in the Harmony Model.</p>
+
+        <div class="product-family">
+            <div class="family-header"><h3>Portal SME Edition</h3><span class="family-tag">People &amp; Retail Operations</span></div>
+            <p class="family-desc">The entry point for SMEs and multi-brand groups. HR self-service, branch visibility, and retail-ready field proof.</p>
+            <div class="grid-2">
+                <div class="card featured"><span class="module-tag">HR</span><h4>Leave Management</h4><p>Requests, balances, multi-level approvals, email approve/reject, HR exports, delegate submission.</p></div>
+                <div class="card featured"><span class="module-tag">HR</span><h4>Expense Management</h4><p>Category breakdown, advances, receipts, approval chains, finance export.</p></div>
+                <div class="card featured"><span class="module-tag">TALENT</span><h4>Performance Appraisals</h4><p>360° reviews, anonymous upward feedback, weighted scoring, org chart admin, completion dashboards.</p></div>
+                <div class="card"><span class="module-tag">TALENT</span><h4>Onboarding Evaluation</h4><p>Likert-scale new-hire feedback with HR analytics.</p></div>
+                <div class="card featured"><span class="module-tag">TRAINING</span><h4>ARIADNE Gamified Training</h4><p>Quests, XP map, battles, leaderboards, Heroes &amp; Wizards — shared engine across portal deployments.</p></div>
+                <div class="card"><span class="module-tag">OPS</span><h4>Daily &amp; Branch Reports</h4><p>Role-based reporting, automated email distribution, compliance tracking per location.</p></div>
+                <div class="card"><span class="module-tag">OPS</span><h4>Delivery Management</h4><p>Photo proof, client e-signature, GDPR consent, quality alerts.</p></div>
+                <div class="card"><span class="module-tag">OPS</span><h4>Retail Sense Map</h4><p>Store locations with traffic indicators — footfall analytics foundation.</p></div>
+                <div class="card"><span class="module-tag">COMMS</span><h4>Documents &amp; Announcements</h4><p>Tag-based knowledge base and internal publishing.</p></div>
+                <div class="card"><span class="module-tag">GOV</span><h4>Corrections &amp; Workflow Chase</h4><p>Cancel applications, chase stalled approvers, reduce HR tickets.</p></div>
+            </div>
+        </div>
+
+        <div class="product-family">
+            <div class="family-header"><h3>Portal Enterprise Edition</h3><span class="family-tag">Project Delivery &amp; PMO</span></div>
+            <p class="family-desc">For infrastructure and EPC contractors managing funded multi-year projects.</p>
+            <div class="grid-2">
+                <div class="card featured"><span class="module-tag">PMO</span><h4>Project Management Office</h4><p>Dashboard, Greece project map, delivery health panel, backlog, RACI, deliverables, executive Word export.</p></div>
+                <div class="card featured"><span class="module-tag">PMO</span><h4>Central Project Dossier (PMTOOL)</h4><p>9-tab project picture: identity, stakeholders, risks, costing, certifications, subcontractors, external submissions, change log.</p></div>
+                <div class="card featured"><span class="module-tag">COMPLIANCE</span><h4>Certifications &amp; Contracts</h4><p>Multi-stage approval (PM→TM→CFO→Accounting), subcontractor scorecards, PDF queues, invoicing readiness.</p></div>
+                <div class="card"><span class="module-tag">KPI</span><h4>Milestones &amp; Funding States</h4><p>DEFCON milestone tracking, cash-flow operational views, automated alert mailers.</p></div>
+                <div class="card"><span class="module-tag">MASTER DATA</span><h4>Project Directory (LOOKUP)</h4><p>Projects, teams tree, PM/SE mappings, archives, subcontractor registry.</p></div>
+                <div class="card"><span class="module-tag">FIELD</span><h4>Work Order Scheduler</h4><p>Calendar planning, smart filters, mobile JSON sync to FieldTask, weather tour, reports.</p></div>
+                <div class="card"><span class="module-tag">FIELD</span><h4>Vehicle Reservation (VRS)</h4><p>Fleet booking, delivery workflow, damage logging — integrates with FieldFleet mobile.</p></div>
+                <div class="card"><span class="module-tag">FIELD</span><h4>Technical Visit Reports</h4><p>Site visits by discipline (Automation, AMR, Hydraulic), photos, station types.</p></div>
+                <div class="card"><span class="module-tag">CLIENT</span><h4>Project Client Calendar</h4><p>Client-facing schedule and reporting.</p></div>
+                <div class="card"><span class="module-tag">KNOWLEDGE</span><h4>Standard Operating Procedures</h4><p>Searchable SOP document library.</p></div>
+                <div class="card featured"><span class="module-tag">CLIENT</span><h4>Secure Client Vault</h4><p>AES-256 PIN mappings, email verification, one-time download, expiry, full audit log, admin 2FA — recipients never need portal accounts.</p></div>
+                <div class="card"><span class="module-tag">INTEGRATION</span><h4>Submission Tracking</h4><p>PMTOOL links each deliverable to its vault submission status and PDF proof.</p></div>
+                <div class="card featured"><span class="module-tag">AI</span><h4>BuDA — Business Data Advisor</h4><p>Conversational PMO analyst — natural-language queries over project data with SQL guardrails.</p></div>
+            </div>
+        </div>
+
+        <div class="product-family">
+            <div class="family-header"><h3>Field Mobile Suite</h3><span class="family-tag">Android · Portal-Synced</span></div>
+            <p class="family-desc">Distributed via PIN-gated app store inside the portal. Extends web workflows to crews without laptops.</p>
+            <div class="grid-3">
+                <div class="card featured"><span class="module-tag">WO</span><h4>FieldTask</h4><p>Work order execution, field reports, photo evidence — syncs to MobWOData JSON and PMO dashboards.</p></div>
+                <div class="card featured"><span class="module-tag">FLEET</span><h4>FieldFleet</h4><p>Vehicle delivery capture, condition photos — feeds VRS fleet module.</p></div>
+                <div class="card"><span class="module-tag">FIELD</span><h4>FieldOps</h4><p>General-purpose field operations companion app.</p></div>
+            </div>
+        </div>
+
+        <div class="product-family">
+            <div class="family-header"><h3>Automation &amp; Integration</h3><span class="family-tag">Background Services · APIs</span></div>
+            <p class="family-desc">The nervous system — keeps workflows moving without human chasing.</p>
+            <div class="grid-2">
+                <div class="card"><span class="module-tag">MAILERS</span><h4>CertMailer · MileStoneMailer · WeekMailer · WFLMailer · DRMailer</h4><p>Automated digests for certifications, funding milestones, weekly progress, workflow steps, daily reports.</p></div>
+                <div class="card"><span class="module-tag">ERP</span><h4>SoftOne Integration Suite</h4><p>Financial sync, BOM-to-budget, project BI bridges — live costing in project dossier.</p></div>
+                <div class="card"><span class="module-tag">AI</span><h4>CashFlow Predictor</h4><p>ML funding-state prediction — premium add-on.</p></div>
+            </div>
+        </div>
+
+        <div class="product-family">
+            <div class="family-header"><h3>Shared Platform Core</h3><span class="family-tag">All Products</span></div>
+            <div class="grid-3">
+                <div class="card"><h4>RBAC &amp; Workflows</h4><p>Granular page permissions, approval chains, role-project binding.</p></div>
+                <div class="card"><h4>Multi-Company</h4><p>One login, many entities — holding companies and franchise groups.</p></div>
+                <div class="card"><h4>Audit History</h4><p>Full CRUD traceability on every business record.</p></div>
+                <div class="card"><h4>Trilingual UI</h4><p>EN · EL · DE built in, extensible via XML resources.</p></div>
+                <div class="card"><h4>Security</h4><p>AES encryption, CAPTCHA, TOTP 2FA, session management.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="problem">
+    <div class="wrap">
+        <div class="section-label">The Opposite of Harmony</div>
+        <h2>When Systems Fall Out of Harmony</h2>
+        <p class="lead">Disconnected tools create discord — duplicate data, broken handoffs, and friction that no licence fee can justify. The Harmony Model exists to replace this noise with a single composed thread.</p>
+        <div class="grid-2">
+            <div class="card"><h4>❌ The Frankenstein Stack</h4><p>HR in one SaaS, projects in another, field photos in WhatsApp, client deliverables via WeTransfer, legacy tools nobody updates. No single truth.</p></div>
+            <div class="card"><h4>❌ Field Blind Spots</h4><p>Work orders planned in Excel, executed on paper, reported by phone. Fleet handovers without photo proof. PMO discovers problems weeks late.</p></div>
+            <div class="card"><h4>❌ Compliance Gaps</h4><p>EU-funded projects need audited submissions, certification chains, and milestone tracking. Spreadsheets and email cannot survive an audit.</p></div>
+            <div class="card"><h4>❌ Training That Fails</h4><p>PDF manuals and one-day inductions do not stick. Retail and technical teams forget product knowledge within weeks — revenue suffers silently.</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="solution">
+    <div class="wrap">
+        <div class="section-label">Platform Capabilities</div>
+        <h2>Ecosystem vs. Alternatives</h2>
+        <table class="compare-table" aria-label="Ecosystem comparison">
+            <thead>
+                <tr><th>Capability</th><th>Our Ecosystem</th><th>Point Solutions</th><th>Enterprise Suite</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>HR + Operations + PMO unified</td><td><span class="check">Modular, one vendor</span></td><td><span class="cross">✗</span></td><td>Partial, expensive</td></tr>
+                <tr><td>Gamified training (ARIADNE)</td><td><span class="check">Built-in</span></td><td><span class="cross">✗</span></td><td>Separate LMS</td></tr>
+                <tr><td>Secure external file vault</td><td><span class="check">Built-in</span></td><td><span class="cross">✗</span></td><td>Rare / custom</td></tr>
+                <tr><td>Native field mobile apps</td><td><span class="check">3 apps + sync</span></td><td><span class="cross">✗</span></td><td>Add-on integrators</td></tr>
+                <tr><td>ERP integration</td><td><span class="check">SoftOne suite</span></td><td><span class="cross">✗</span></td><td>Licensed separately</td></tr>
+                <tr><td>Multi-company / multi-brand</td><td><span class="check">Built-in</span></td><td><span class="cross">✗</span></td><td>Enterprise upsell</td></tr>
+                <tr><td>Workflow automation mailers</td><td><span class="check">MicroServices</span></td><td>Manual / Zapier</td><td>Licensed separately</td></tr>
+                <tr><td>Time to first go-live</td><td><span class="check">2–6 weeks</span></td><td>Immediate but broken</td><td>6–18 months</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="differentiators">
+    <div class="wrap">
+        <div class="section-label">Competitive Edge</div>
+        <h2>Why Harmony Wins</h2>
+        <div class="grid-2">
+            <div class="card"><h4>1. Composed, Not Bolted On</h4><p>Four product lines share platform DNA from day one — not multiple vendors stitched together with APIs and hope.</p></div>
+            <div class="card"><h4>2. Production-Proven at Scale</h4><p>Running daily for multi-brand retail groups and infrastructure contractors with hundreds of concurrent users — harmony in live operation.</p></div>
+            <div class="card"><h4>3. ARIADNE — Learning in Harmony</h4><p>Gamified training with map, battles, and XP woven into the same portal your teams already use — knowledge stays in rhythm with operations.</p></div>
+            <div class="card"><h4>4. External Harmony</h4><p>Clients and auditors stay outside the firewall yet remain on the same thread — secure vault linked to PMO dossier tracking.</p></div>
+            <div class="card"><h4>5. Field + Office — One Thread</h4><p>Plan in the portal, execute on FieldTask/FieldFleet, prove in MobWOData, report in PMO — the Continuous Flow principle in action.</p></div>
+            <div class="card"><h4>6. Progressive Composition</h4><p>Start with Portal SME Edition Essentials. Add Ariadne when projects grow. Layer mobile and automation as needed — the orchestra expands, the core stays the same.</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="customers">
+    <div class="wrap">
+        <div class="section-label">Target Markets</div>
+        <h2>Segment Fit</h2>
+        <div class="persona">
+            <h4>🏢 Multi-Brand Groups &amp; Retail Chains</h4>
+            <p class="pain"><strong>Challenge:</strong> Fragmented HR, no branch visibility, product knowledge gaps, delivery disputes.</p>
+            <p class="gain"><strong>Recommended package:</strong> Portal SME Edition (Leave + Expenses + Branch Reports + ARIADNE + Delivery).</p>
+        </div>
+        <div class="persona">
+            <h4>🏗️ Infrastructure &amp; EPC Contractors</h4>
+            <p class="pain"><strong>Challenge:</strong> EU-funded projects, certification chains, milestone alerts, client deliverable submissions.</p>
+            <p class="gain"><strong>Recommended package:</strong> Portal Enterprise Edition (PMO + PMTOOL + CERTS + KPI) + Secure Client Vault + MicroServices mailers.</p>
+        </div>
+        <div class="persona">
+            <h4>🚛 Field-Heavy Operations</h4>
+            <p class="pain"><strong>Challenge:</strong> Work orders on paper, fleet handovers without proof, site visits lost in email.</p>
+            <p class="gain"><strong>Recommended package:</strong> Work Orders + VRS + FieldTask + FieldFleet + MAINT visits.</p>
+        </div>
+        <div class="persona">
+            <h4>👥 HR-Led SMEs (50–500 staff)</h4>
+            <p class="pain"><strong>Challenge:</strong> Spreadsheet leave tracking, Word appraisal forms, no audit trail.</p>
+            <p class="gain"><strong>Recommended package:</strong> Portal SME Edition Essentials → expand to Appraisals + ARIADNE over time.</p>
+        </div>
+    </div>
+</section>
+
+<section id="offering">
+    <div class="wrap">
+        <div class="section-label">Commercial Model</div>
+        <h2>Ecosystem Packages</h2>
+        <p class="lead">Tiered by client maturity. Each tier builds on the previous — a clear progressive adoption path.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="tier-name">Tier 1</div>
+                <h4>Corporate Essentials</h4>
+                <ul>
+                    <li>Portal SME Edition core + RBAC</li>
+                    <li>Leave + Expenses + Corrections</li>
+                    <li>Documents + Announcements</li>
+                    <li>Up to 100 users</li>
+                </ul>
+                <p class="tier-note">SMEs replacing spreadsheets. Fastest close.</p>
+            </div>
+            <div class="pricing-card recommended">
+                <div class="tier-name">Tier 2</div>
+                <h4>People &amp; Operations</h4>
+                <ul>
+                    <li>Everything in Essentials</li>
+                    <li>Appraisals + Onboarding</li>
+                    <li>Daily &amp; Branch Reports</li>
+                    <li>Delivery + Multi-Company</li>
+                    <li>ARIADNE Training</li>
+                </ul>
+                <p class="tier-note">Retail, hospitality, multi-location. Highest volume tier.</p>
+            </div>
+            <div class="pricing-card">
+                <div class="tier-name">Tier 3</div>
+                <h4>Project Delivery (PMO)</h4>
+                <ul>
+                    <li>PMO + PMTOOL dossier</li>
+                    <li>Certifications + KPI milestones</li>
+                    <li>Work Orders + Fleet (VRS)</li>
+                    <li>MicroServices mailers</li>
+                    <li>BuDA AI advisor</li>
+                </ul>
+                <p class="tier-note">Infrastructure and EPC contractors.</p>
+            </div>
+        </div>
+        <div class="pricing-grid grid-mt">
+            <div class="pricing-card">
+                <div class="tier-name">Tier 4</div>
+                <h4>Field &amp; Compliance</h4>
+                <ul>
+                    <li>Tier 3 + Secure Client Vault</li>
+                    <li>FieldTask + FieldFleet mobile</li>
+                    <li>Technical visit reports</li>
+                </ul>
+                <p class="tier-note">Field crews + audited external submissions.</p>
+            </div>
+            <div class="pricing-card">
+                <div class="tier-name">Tier 5</div>
+                <h4>Enterprise Harmony</h4>
+                <ul>
+                    <li>Full Ariadne + Portal SME Edition</li>
+                    <li>SoftOne ERP integration</li>
+                    <li>All mobile apps + automation</li>
+                    <li>Custom integration + SLA</li>
+                </ul>
+                <p class="tier-note">Enterprise groups requiring full-stack harmony.</p>
+            </div>
+            <div class="pricing-card">
+                <div class="tier-name">À la carte</div>
+                <h4>Any Module Standalone</h4>
+                <ul>
+                    <li>Secure Client Vault alone</li>
+                    <li>ARIADNE Training alone</li>
+                    <li>Single Ariadne module</li>
+                    <li>Custom integration project</li>
+                </ul>
+                <p class="tier-note">Entry via a single module, expand quarterly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pitch">
+    <div class="wrap">
+        <div class="section-label">Commercial Narrative</div>
+        <h2>Positioning &amp; Client Dialogue</h2>
+        <h3>Opening Narrative — The Harmony Model</h3>
+        <div class="pitch-box pitch-box--long">
+            <p>"We don't sell disconnected apps. We compose ecosystems through the Harmony Model — four product lines orchestrated around one platform core. Portal SME Edition handles HR and branch operations. Our Enterprise Portal solution can run funded projects, monitor milestones, up to the work orders executed in the field. Mobile apps capture proof on site. Automation keeps workflows moving without human chasing.</p>
+            <p>The difference is harmony: one source of truth, one permission layer, one audit trail. Clients start with what they need today and add instruments to the orchestra as they grow — never a multi-vendor Frankenstein stack falling out of sync."</p>
+        </div>
+        <h3>Qualification Themes — Testing for Discord</h3>
+        <div class="qa-block"><div class="q">"How many separate systems do you use for HR, projects, and field reporting?"</div><div class="a">Three or more signals ecosystem fit — map each system to a product line and quantify integration cost.</div></div>
+        <div class="qa-block"><div class="q">"How do external parties receive project deliverables?"</div><div class="a">Email or WeTransfer indicates a gap — position Secure Client Vault with PMTOOL tracking as the compliant alternative.</div></div>
+        <div class="qa-block"><div class="q">"Do field teams have a mobile app connected to your back office?"</div><div class="a">Paper or WhatsApp workflows confirm field blind spots — FieldTask and FieldFleet close the loop.</div></div>
+        <div class="qa-block"><div class="q">"Are you managing EU-funded or certified subcontractor workflows?"</div><div class="a">Yes confirms Enterprise Portal CERTS and CertMailer automation as a core requirement.</div></div>
+    </div>
+</section>
+
+<section id="objections">
+    <div class="wrap">
+        <div class="section-label">Client Concerns</div>
+        <h2>Frequently Raised Points</h2>
+        <div class="qa-block"><div class="q">"We only need HR — not the whole ecosystem."</div><div class="a">"Perfect — Portal SME Edition Essentials is designed exactly for that. When you later need branch reports or training, you activate modules without migration. Same login, same data."</div></div>
+        <div class="qa-block"><div class="q">"We already use [SAP / Procore / BambooHR]."</div><div class="a">"Those tools excel in their lane. We cover what they miss: gamified training, secure client vault, native field mobile sync, and multi-company — at mid-market pricing. Many clients run us alongside their ERP."</div></div>
+        <div class="qa-block"><div class="q">"This seems complex."</div><div class="a">"Complexity is optional. Tier 1 go-live is two weeks with Leave and Expenses only. Complexity grows only when your business demands it."</div></div>
+        <div class="qa-block"><div class="q">"Can we integrate with our ERP?"</div><div class="a">"Yes — SoftOne integration is production-proven. CSV/Excel exports and SOAP APIs for custom bridges. Scoped separately."</div></div>
+    </div>
+</section>
+
+<section>
+    <div class="wrap">
+        <div class="section-label">Technical Credibility</div>
+        <h2>Platform Foundation <span class="h2-sub">(for technical buyers)</span></h2>
+        <div class="grid-3">
+            <div class="card"><h4>Web Portals</h4><p>ASP.NET WebForms 4.5–4.8, SQL Server, Bootstrap.</p></div>
+            <div class="card"><h4>Mobile</h4><p>Android APKs (FieldTask, FieldFleet, FieldOps) with JSON sync to portal backends.</p></div>
+            <div class="card"><h4>Automation</h4><p>Windows scheduled services, SMTP mailers, encrypted handshake web services.</p></div>
+            <div class="card"><h4>Integration</h4><p>SoftOne ERP bridges, CSV and SOAP exports.</p></div>
+            <div class="card"><h4>AI Add-ons</h4><p>BuDA conversational PMO, CashFlow ML predictor.</p></div>
+        </div>
+    </div>
+</section>
+    </div>
+
+
+    <!-- Lynx (companion tool) -->
     <section id="lynx" class="product-section lynx-section-bg">
       <div class="container">
         <div class="product-section-head">
@@ -511,156 +616,9 @@
           <a href="https://ollama.com/download" target="_blank" rel="noopener" class="text-sm text-slate-600 hover:text-blue-600">OLLAMA</a>
         </div>
 
-        <div class="card p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <h3 class="text-sm font-semibold mb-1">Join the Lynx community</h3>
-            <p class="text-xs text-slate-600">Share setups, ask questions, see how others use Lynx.</p>
-          </div>
-          <a href="https://www.reddit.com/r/LynxLLM/" target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 hover:border-blue-400 hover:bg-blue-50/40 transition-colors">
-            Join the Lynx community
-          </a>
-        </div>
       </div>
     </section>
 
-    <!-- Section 2: Ariadne -->
-    <section id="ariadne" class="product-section ariadne-section-bg">
-      <div class="container">
-        <div class="product-section-head">
-          <div class="flex items-center gap-3">
-            <img src="ariadne.png"
-                 alt="Ariadne" class="h-12 w-12 rounded-xl object-cover border border-slate-200 shadow-sm" />
-            <div>
-              <h2 class="product-section-title">Ariadne</h2>
-              <p class="text-sm text-slate-500">Gamified corporate training</p>
-            </div>
-          </div>
-          <div class="soft-chip">
-            <span class="soft-chip-dot"></span>
-            &euro;500 setup + &euro;6 / seat / month
-          </div>
-        </div>
-
-        <p class="text-slate-600 text-sm md:text-base max-w-2xl mb-6">
-          Ariadne turns training into a game: battles, missions, classes, teams and dashboards. Employees get a competitive journey; you get adoption, performance and engagement in real time. Best for 25+ learners and ongoing curricula.
-        </p>
-
-        <div class="grid gap-5 md:grid-cols-3 mb-8">
-          <div class="card p-5">
-            <h3 class="text-sm font-semibold mb-1.5">Battles, missions &amp; classes</h3>
-            <p class="text-xs text-slate-600">Learners join classes and teams, unlock player classes and battle — correct answers and activity move them up.</p>
-          </div>
-          <div class="card p-5">
-            <h3 class="text-sm font-semibold mb-1.5">Dashboards</h3>
-            <p class="text-xs text-slate-600">Track participation, success rates, class and branch performance at a glance.</p>
-          </div>
-          <div class="card p-5">
-            <h3 class="text-sm font-semibold mb-1.5">Bundles that scale</h3>
-            <p class="text-xs text-slate-600">Start with a pilot and expand. Transparent pricing by active seat.</p>
-          </div>
-        </div>
-
-        <section id="pricing">
-          <h3 class="text-base font-semibold mb-2">Pricing bundles</h3>
-          <p class="text-xs text-slate-600 mb-4">
-            <strong>&euro;500 one-time setup</strong> + <strong>&euro;6 per seat per month</strong>. Choose by expected learner count.
-          </p>
-          <div class="grid gap-5 md:grid-cols-3">
-            <div class="card p-5">
-              <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Starter</div>
-              <div class="text-lg font-bold">20–30 seats</div>
-              <div class="text-sm text-slate-600 mt-1">~&euro;180/mo seats (up to 30) + &euro;500 setup</div>
-              <ul class="text-xs text-slate-600 space-y-1 mt-3">
-                <li>✔ Full platform, 20–30 accounts</li>
-                <li>✔ Reports &amp; dashboards, email support</li>
-              </ul>
-            </div>
-            <div class="card p-5 pricing-highlight">
-              <div class="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-1">Growth</div>
-              <div class="text-xs text-amber-700 font-medium mb-1">Most popular</div>
-              <div class="text-lg font-bold">up to 60 seats</div>
-              <div class="text-sm text-slate-600 mt-1">~&euro;360/mo seats + &euro;500 setup</div>
-              <ul class="text-xs text-slate-600 space-y-1 mt-3">
-                <li>✔ Everything in Starter</li>
-                <li>✔ Up to 60 accounts, more branches, priority onboarding</li>
-              </ul>
-            </div>
-            <div class="card p-5">
-              <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Enterprise</div>
-              <div class="text-lg font-bold">More than 60 seats</div>
-              <div class="text-sm text-slate-600 mt-1">Same &euro;500 setup, pricing on discussion</div>
-              <ul class="text-xs text-slate-600 space-y-1 mt-3">
-                <li>✔ Unlimited branches, custom reporting</li>
-                <li>✔ Optional consulting, SLAs</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <!-- Section 3: Custom Portal Solutions -->
-    <section id="portal" class="product-section portal-section-bg">
-      <div class="container">
-        <div class="product-section-head">
-          <div class="flex items-center gap-3">
-            <img src="portal.png"
-                 alt="Custom Portal Solutions" class="h-12 w-12 rounded-xl object-cover border border-slate-200 shadow-sm" />
-            <div>
-              <h2 class="product-section-title">Custom Portal Solutions</h2>
-              <p class="text-sm text-slate-500">Front doors to your internal universe</p>
-            </div>
-          </div>
-          <div class="soft-chip">
-            <span class="soft-chip-dot"></span>
-            Tailored portals for teams, partners &amp; customers
-          </div>
-        </div>
-
-        <p class="text-slate-600 text-sm md:text-base max-w-2xl mb-4">
-          We design and build custom web portals that feel native to your workflows: single sign-on, role-based access,
-          dashboards and integrations with your existing systems. From lightweight dashboards to full multi-tenant portals,
-          everything is tuned to your actual processes instead of forcing you into a template.
-        </p>
-        <p class="text-slate-600 text-sm md:text-base max-w-2xl mb-6">
-          The architecture is deliberately modular and evolvable: we start with a minimal core and add modules (analytics,
-          training, self-service, integrations) as you grow, avoiding big-bang rewrites. Using a Wardley Mapping–inspired
-          approach, we separate what should remain highly custom from what can be industrialized, so you keep the same portal
-          shell while the capabilities expand over time.
-        </p>
-
-        <div class="grid gap-5 md:grid-cols-3 mb-8">
-          <div class="card p-5">
-            <h3 class="text-sm font-semibold mb-1.5">Employee &amp; team portals</h3>
-            <p class="text-xs text-slate-600">
-              Centralize internal tools, documentation, KPIs and forms into a single, secure starting point for your staff.
-            </p>
-          </div>
-          <div class="card p-5">
-            <h3 class="text-sm font-semibold mb-1.5">Partner / client access</h3>
-            <p class="text-xs text-slate-600">
-              Offer self-service access to reports, orders, tickets or training material with fine-grained permissions.
-            </p>
-          </div>
-          <div class="card p-5">
-            <h3 class="text-sm font-semibold mb-1.5">Integrations that stick</h3>
-            <p class="text-xs text-slate-600">
-              Connect to your existing systems (ERP, CRM, LMS, bespoke APIs) so portals stay in sync instead of duplicating data.
-            </p>
-          </div>
-        </div>
-
-        <div class="card p-5">
-          <h3 class="text-sm font-semibold mb-2">Engagement model</h3>
-          <p class="text-xs text-slate-600">
-            Portal projects are scoped and priced individually based on complexity, integrations and user counts.
-            If you are considering a custom portal, we can start with a short discovery call and a small prototype
-            to de-risk the bigger rollout.
-          </p>
-        </div>
-      </div>
-    </section>
 
     <!-- Section 4: Cam Grid App (C.G.A) -->
     <section id="cga" class="product-section cga-section-bg">
@@ -755,7 +713,7 @@
           C.G.A is built for situations where ordinary viewers fall over: patchy Wi-Fi on cheap cameras, slow links, interference, or RTSP sources that pause and never come back without a full reconnect. The app lays out <strong>four RTSP feeds in a fixed grid</strong> so you always see the same layout, and each cell can <strong>re-initialize its stream</strong> when the picture freezes, goes black, or the connection is lost — without restarting the whole application.
         </p>
         <p class="text-slate-600 text-sm md:text-base max-w-none mb-6">
-          Use it anywhere you need dependable live tiles: small security setups, shop floors, remote equipment checks, or any monitoring stack where streams drop periodically and fragile apps make that painful.
+          Use it anywhere you need dependable live tiles: small security setups, shop floors, remote equipment checks, or any monitoring stack where streams drop periodically and fragile apps make that painful. For organisations running the <a href="#portal" class="text-sky-800 font-semibold hover:underline">Harmony Model</a>, C.G.A sits alongside as a focused desktop utility — same philosophy of resilience when conditions are imperfect.
         </p>
 
         <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4 mb-6">
@@ -791,7 +749,7 @@
   <footer class="bg-white border-t border-slate-200/70">
     <div class="container py-4 flex items-center justify-center text-xs text-slate-500 text-center">
       <div>
-        &copy; 2025 and beyond &mdash; antonis5980 is one physical person, a thousand digital capabilities.
+        &copy; 2025&ndash;2026 &mdash; antonis5980 &mdash; Harmony Model, Lynx &amp; C.G.A.
       </div>
     </div>
   </footer>
@@ -888,6 +846,7 @@
 
       startInterval();
     })();
+
   </script>
 </body>
 </html>
