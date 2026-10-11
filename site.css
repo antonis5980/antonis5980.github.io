@@ -1,12 +1,12 @@
 /* ==========================================================================
-   habs by antonis — Hybrid Autonomous Bot System
+   habs by antonis — Hybrid Autonomous Bot Systems
    Light Federation / LCARS-inspired surface + Star Trek geometric type
    ========================================================================== */
 
 :root {
-  --void: #eef3f9;
-  --void-elevated: #ffffff;
-  --void-panel: #f7fafc;
+  --void: #dce5f0;
+  --void-elevated: #f4f7fb;
+  --void-panel: #e8eef6;
   --line: rgba(15, 55, 95, 0.12);
   --line-strong: rgba(15, 55, 95, 0.22);
   --text: #0c2744;
@@ -55,9 +55,9 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 90% 55% at 12% -8%, rgba(11, 127, 184, 0.14), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 96% 18%, rgba(227, 154, 28, 0.1), transparent 50%),
-    linear-gradient(180deg, #f5f8fc 0%, var(--void) 40%, #e8eff7 100%);
+    radial-gradient(ellipse 90% 55% at 12% -8%, rgba(11, 127, 184, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 96% 18%, rgba(227, 154, 28, 0.12), transparent 50%),
+    linear-gradient(180deg, #e4ebf4 0%, var(--void) 42%, #cfd9e8 100%);
 }
 
 body::after {
@@ -66,10 +66,10 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.55;
   background-image:
-    linear-gradient(rgba(11, 127, 184, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 127, 184, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(11, 127, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 127, 184, 0.07) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 20%, transparent 75%);
 }
@@ -233,8 +233,8 @@ a:hover {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(11, 127, 184, 0.1), transparent 65%),
-    linear-gradient(180deg, transparent 55%, var(--void) 100%);
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(11, 127, 184, 0.14), transparent 65%),
+    linear-gradient(180deg, transparent 50%, var(--void) 100%);
 }
 
 .hero-inner {
