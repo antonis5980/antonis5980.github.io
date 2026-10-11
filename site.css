@@ -1,5 +1,5 @@
 /* ==========================================================================
-   habs by antonis — Hybrid Autonomous Bot Systems
+   habs — Hybrid Autonomous Bot Systems
    Light Federation / LCARS-inspired surface + Star Trek geometric type
    ========================================================================== */
 
@@ -150,28 +150,12 @@ a:hover {
   border-radius: 8px;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-  gap: 0.15rem;
-}
-
 .brand-name {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: 0.95rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.brand-by {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--rose);
 }
 
 .site-nav {
@@ -260,16 +244,6 @@ a:hover {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text);
-}
-
-.hero-by {
-  margin: 0 0 0.65rem;
-  font-family: var(--font-mono);
-  font-size: clamp(0.85rem, 1.8vw, 1rem);
-  font-weight: 400;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--signal);
 }
 
 .hero-expand {
@@ -423,6 +397,22 @@ a:hover {
 
 .band-stack .band-lead {
   margin-bottom: 2.5rem;
+}
+
+.example-callout {
+  margin: 1.5rem 0 0;
+  padding: 1rem 0 0;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--lcars), var(--cyan)) 1;
+  max-width: 36rem;
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.example-callout .mono-label {
+  margin-bottom: 0.4rem;
+  color: var(--signal);
 }
 
 /* Signal list (Agents) */
@@ -664,7 +654,8 @@ a:hover {
   white-space: nowrap;
 }
 
-.footer-linkedin {
+.footer-linkedin,
+.footer-x {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -672,11 +663,13 @@ a:hover {
   text-decoration: none;
 }
 
-.footer-linkedin:hover {
+.footer-linkedin:hover,
+.footer-x:hover {
   color: var(--signal);
 }
 
-.footer-linkedin-icon {
+.footer-linkedin-icon,
+.footer-x-icon {
   width: 1.05rem;
   height: 1.05rem;
   display: block;
@@ -775,14 +768,6 @@ a:hover {
 .privacy-policy .privacy-updated {
   margin-bottom: 1rem;
   color: var(--text);
-}
-
-.privacy-gemi,
-.about-gemi {
-  display: block;
-  width: min(100%, 714px);
-  height: auto;
-  margin: 1.25rem 0 0.35rem;
 }
 
 .legal-pop-x {
