@@ -1,5 +1,5 @@
 /* ==========================================================================
-   habs — Hybrid Autonomous Bot Systems
+   Hybrid Autonomous Bot Systems
    Light Federation / LCARS-inspired surface + Star Trek geometric type
    ========================================================================== */
 
@@ -153,9 +153,11 @@ a:hover {
 .brand-name {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
+  font-size: clamp(0.55rem, 1.4vw, 0.72rem);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  max-width: 14rem;
+  line-height: 1.25;
 }
 
 .site-nav {
@@ -236,29 +238,20 @@ a:hover {
 }
 
 .hero-brand {
-  margin: 0 0 0.35rem;
+  margin: 0 auto 1.25rem;
+  max-width: 18ch;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.1rem, 7vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: 0.18em;
+  font-size: clamp(1.05rem, 3.2vw, 1.65rem);
+  line-height: 1.35;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text);
 }
 
-.hero-expand {
-  margin: 0 0 1.25rem;
-  font-family: var(--font-mono);
-  font-size: clamp(0.7rem, 1.5vw, 0.82rem);
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--rose);
-}
-
 .hero-headline {
   margin: 0 auto 0.85rem;
-  max-width: 22ch;
+  max-width: 28ch;
   font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(1.05rem, 2.8vw, 1.55rem);
@@ -269,10 +262,20 @@ a:hover {
 }
 
 .hero-support {
-  margin: 0 auto 1.5rem;
-  max-width: 34rem;
+  margin: 0 auto 0.85rem;
+  max-width: 38rem;
   font-size: clamp(0.98rem, 1.8vw, 1.08rem);
   color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.hero-pillars {
+  margin: 0 auto 1.5rem;
+  max-width: 36rem;
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1.5vw, 0.88rem);
+  letter-spacing: 0.04em;
+  color: var(--cyan-deep);
   line-height: 1.55;
 }
 
@@ -347,6 +350,21 @@ a:hover {
     linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent);
 }
 
+/* Shared section layout — every band uses the same block */
+.band-block {
+  /* Keep shell's margin-inline: auto — do not reset margin here */
+  max-width: min(48rem, 100%);
+  text-align: left;
+}
+
+.band-head {
+  margin: 0 0 2rem;
+}
+
+.band-head:last-child {
+  margin-bottom: 0;
+}
+
 .eyebrow {
   margin: 0 0 0.75rem;
   font-family: var(--font-mono);
@@ -366,45 +384,33 @@ a:hover {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text);
-  max-width: 22ch;
+  max-width: 28ch;
 }
 
-.band-lead,
-.band-copy > p,
-.cta-inner > p {
-  margin: 0;
+.band-lead {
+  margin: 0 0 0.9rem;
   max-width: 40rem;
   font-size: 1.05rem;
   color: var(--text-soft);
 }
 
-.band-grid {
-  display: grid;
-  gap: clamp(2rem, 5vw, 3.5rem);
-  align-items: start;
+.band-lead:last-child {
+  margin-bottom: 0;
 }
 
-@media (min-width: 900px) {
-  .band-grid {
-    grid-template-columns: 1.05fr 1fr;
-    gap: 4rem;
-  }
-}
-
-.band-stack {
-  max-width: 52rem;
-}
-
-.band-stack .band-lead {
-  margin-bottom: 2.5rem;
+.band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
 }
 
 .example-callout {
-  margin: 1.5rem 0 0;
+  margin: 2rem 0 0;
   padding: 1rem 0 0;
   border-top: 2px solid transparent;
   border-image: linear-gradient(90deg, var(--lcars), var(--cyan)) 1;
-  max-width: 36rem;
+  max-width: 40rem;
   font-size: 1.05rem;
   color: var(--text);
   line-height: 1.5;
@@ -415,7 +421,17 @@ a:hover {
   color: var(--signal);
 }
 
-/* Signal list (Agents) */
+.mono-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+/* Shared vertical list used by build / difference / process */
 .signal-list {
   list-style: none;
   margin: 0;
@@ -461,117 +477,10 @@ a:hover {
   margin: 0;
   font-size: 0.95rem;
   color: var(--text-faint);
-}
-
-/* Sovereign strip */
-.sovereign-strip {
-  display: grid;
-  gap: 1.5rem;
-  padding-top: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .sovereign-strip {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-}
-
-.sovereign-strip > div {
-  padding-top: 1.25rem;
-  border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, var(--lcars), var(--cyan), var(--rose)) 1;
-}
-
-.mono-label {
-  display: block;
-  margin-bottom: 0.55rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--rose);
-}
-
-.sovereign-strip p {
-  margin: 0;
-  font-size: 0.98rem;
-  color: var(--text-soft);
-  max-width: 22rem;
-}
-
-/* Services rail */
-.service-rail {
-  list-style: none;
-  margin: 2.5rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 0;
-  counter-reset: svc;
-}
-
-.service-rail li {
-  counter-increment: svc;
-  display: grid;
-  gap: 0.5rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--line);
-  position: relative;
-}
-
-.service-rail li::before {
-  content: counter(svc, decimal-leading-zero);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  color: var(--cyan-deep);
-  margin-bottom: 0.15rem;
-}
-
-@media (min-width: 768px) {
-  .service-rail {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 3rem;
-  }
-
-  .service-rail li:nth-child(odd) {
-    padding-right: 1.5rem;
-  }
-}
-
-.service-rail h3 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-
-.service-rail p {
-  margin: 0;
-  font-size: 0.98rem;
-  color: var(--text-faint);
-  max-width: 32rem;
-}
-
-.cta-inner {
-  text-align: center;
   max-width: 40rem;
-  margin-inline: auto;
 }
 
-.cta-inner h2 {
-  max-width: none;
-  margin-inline: auto;
-}
-
-.cta-inner > p {
-  margin: 0 auto 2rem;
-}
-
-.cta-inner .eyebrow {
+.band-cta .eyebrow {
   color: var(--signal);
 }
 
@@ -607,17 +516,13 @@ a:hover {
 .footer-brand strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 400;
   color: var(--text);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.footer-brand span {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-faint);
+  max-width: 16rem;
+  line-height: 1.35;
 }
 
 .footer-meta {
@@ -931,7 +836,4 @@ body.legal-open {
     min-height: 3.5rem;
   }
 
-  .hero-brand {
-    letter-spacing: 0.12em;
-  }
 }
